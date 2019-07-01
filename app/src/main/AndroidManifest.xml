@@ -10,20 +10,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!--<activity android:name=".DetailMovie" />-->
+        <activity android:name=".DetailMovie"></activity>
+        <!-- <activity android:name=".DetailMovie" /> -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:label="@string/title_activity_main_tabbed">
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -33,9 +36,9 @@
                     android:scheme="http" />
                 <!-- note that the leading "/" is required for pathPrefix -->
                 <!-- Accepts URIs that begin with "example://gizmos” -->
-                <!--<data-->
-                <!--android:host="ajoyajoya"-->
-                <!--android:scheme="movielicious" />-->
+                <!-- <data -->
+                <!-- android:host="ajoyajoya" -->
+                <!-- android:scheme="movielicious" /> -->
             </intent-filter>
         </activity>
 

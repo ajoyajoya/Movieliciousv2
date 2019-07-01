@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/img_trailer_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/txt_trailer">
+
+    <ImageView
+        android:id="@+id/img_trailer_link"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:alpha="0.5"
+        android:background="@drawable/shadow_poster"
+        android:contentDescription="@string/this_for_background_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/poster_a_star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="8dp"
+        android:alpha="0.9"
+        android:background="@drawable/ic_play_circle_filled_white_100dp"
+        android:contentDescription="@string/this_for_button"
+        app:layout_constraintBottom_toBottomOf="@+id/img_trailer_link"
+        app:layout_constraintEnd_toEndOf="@+id/img_trailer_link"
+        app:layout_constraintStart_toStartOf="@+id/img_trailer_link"
+        app:layout_constraintTop_toTopOf="@+id/img_trailer_link">
+
+    </ImageView>
+</android.support.constraint.ConstraintLayout>

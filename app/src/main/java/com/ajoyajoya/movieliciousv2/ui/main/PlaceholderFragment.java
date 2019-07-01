@@ -22,13 +22,15 @@ public class PlaceholderFragment extends Fragment {
 
     private PageViewModel pageViewModel;
 
-    public static PlaceholderFragment newInstance(int index) {
-        PlaceholderFragment fragment = new PlaceholderFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt(ARG_SECTION_NUMBER, index);
-        fragment.setArguments(bundle);
-        return fragment;
-    }
+// --Commented out by Inspection START (2019-07-01 22:07):
+//    public static PlaceholderFragment newInstance(int index) {
+//        PlaceholderFragment fragment = new PlaceholderFragment();
+//        Bundle bundle = new Bundle();
+//        bundle.putInt(ARG_SECTION_NUMBER, index);
+//        fragment.setArguments(bundle);
+//        return fragment;
+//    }
+// --Commented out by Inspection STOP (2019-07-01 22:07)
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

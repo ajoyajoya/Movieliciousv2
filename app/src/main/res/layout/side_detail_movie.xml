@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/txt_title_and_rate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/txt_movie_name">
+
+    <ImageView
+        android:id="@+id/img_poster_movie"
+        android:layout_width="140dp"
+        android:layout_height="210dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shadow_poster"
+        android:contentDescription="@string/this_is_poster"
+        android:scaleType="fitXY"
+        android:src="@drawable/poster_a_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <TextView
+        android:id="@+id/txt_movie_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@id/img_poster_movie"
+        android:fontFamily="@font/open_sans_semibold_1"
+        android:shadowColor="#7F000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="@string/movie_rate"
+        android:textColor="@color/colorPrimaryLightest"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/txt_movie_crew_title"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/txt_movie_rate"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@id/txt_movie_rate"
+        android:fontFamily="@font/open_sans_semibold_1"
+        android:text="@string/max_movie_rate"
+        android:textColor="@color/colorPrimaryLightest"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_movie_rate"
+        app:layout_constraintStart_toEndOf="@+id/txt_movie_rate" />
+
+    <TextView
+        android:id="@+id/txt_movie_crew_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_movie_rate"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/img_poster_movie"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans"
+        android:maxLines="1"
+        android:text="@string/movie_crew_title"
+        android:textColor="@color/colorPrimaryLightest"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_rate" />
+
+    <TextView
+        android:id="@+id/txt_movie_crew_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_movie_crew_title"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/img_poster_movie"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans"
+        android:maxLines="1"
+        android:text="@string/movie_crew_name1"
+        android:textColor="@color/colorPrimaryLightest"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_crew_job1" />
+
+    <TextView
+        android:id="@+id/txt_movie_crew_job1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_movie_crew_name1"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@id/img_poster_movie"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans"
+        android:maxLines="1"
+        android:text="@string/movie_crew_job1"
+        android:textColor="@color/colorPrimaryLightest"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_crew_name2" />
+
+    <TextView
+        android:id="@+id/txt_movie_crew_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_movie_crew_job1"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/img_poster_movie"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans"
+        android:maxLines="1"
+        android:text="@string/movie_crew_name2"
+        android:textColor="@color/colorPrimaryLightest"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_crew_title" />
+
+    <TextView
+        android:id="@+id/txt_movie_crew_job2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_movie_crew_name2"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@id/img_poster_movie"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans"
+        android:maxLines="1"
+        android:text="@string/movie_crew_job2"
+        android:textColor="@color/colorPrimaryLightest"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_crew_name1" />
+
+    <TextView
+        android:id="@+id/txt_movie_cat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_movie_crew_job2"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/img_poster_movie"
+        android:ellipsize="end"
+        android:fontFamily="@font/open_sans"
+        android:maxLines="2"
+        android:text="@string/movie_category"
+        android:textColor="@color/colorPrimaryLightest"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_crew_job2" />
+
+
+</android.support.constraint.ConstraintLayout>

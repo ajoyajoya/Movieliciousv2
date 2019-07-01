@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Movielicious</string>
     <string name="movie_title">A Star is Born</string>
     <string name="movie_category">Drama | 1h 51min | 10/21/2016</string>
@@ -81,11 +81,118 @@
         <item>@drawable/poster_dragon</item>
         <item>@drawable/poster_dragonball</item>
     </string-array>
+
     <string name="title_activity_main_tabbed">Movielicious</string>
     <string name="tab_text_1">MOVIES</string>
     <string name="tab_text_2">TV SHOWS</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" tools:keep="@string/hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_poster_movie">Image Poster Movie</string>
+
+
+    <string-array name="data_tv_name">
+        <item>Arrow (2012)</item>
+        <item>Doom Patrol (2019)</item>
+        <item>Dragon Ball (1986)</item>
+        <item>Fairy Tail (2009)</item>
+        <item>Family Guy (1999)</item>
+        <item>The Flash (2014)</item>
+        <item>God (2016)</item>
+        <item>Gotham (2014)</item>
+        <item>Grey Anatomy (2005)</item>
+        <item>Hanna (2019)</item>
+    </string-array>
+
+    <string-array name="data_tv_rating">
+        <item>7.6</item>
+        <item>8.2</item>
+        <item>8.5</item>
+        <item>8.1</item>
+        <item>8.2</item>
+        <item>7.8</item>
+        <item>7.5</item>
+        <item>7.9</item>
+        <item>7.6</item>
+        <item>7.6</item>
+    </string-array>
+
+    <string-array name="data_tv_category">
+        <item>TV-14 | 42min | Action, Adventure, Crime | TV Series (2012– )</item>
+        <item>TV-MA | 1h | Action, Adventure, Comedy | TV Series (2019– )</item>
+        <item>TV-Y7 | 24min | Animation, Action, Adventure | TV Series (1986–1989)</item>
+        <item>TV-14 | 24min | Animation, Action, Adventure | TV Series (2009– )</item>
+        <item>TV-14 | 22min | Animation, Comedy | TV Series (1999– )</item>
+        <item>TV-PG | 43min | Action, Adventure, Drama | TV Series (2014– )</item>
+        <item>TV-PG | 21min | Comedy | Episode aired 28 September 2016</item>
+        <item>TV-14 | 42min | Action, Crime, Drama | TV Series (2014–2019)</item>
+        <item>TV-14 | 41min | Drama, Romance | TV Series (2005– )</item>
+        <item>TV-MA | 1h | Action, Drama | TV Series (2019– )</item>
+    </string-array>
+
+    <string-array name="data_tv_desc">
+        <item>
+            Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.\n
+            Oliver Queen and his father are lost at sea when their luxury yacht sinks, apparently in a storm. His father dies, but Oliver survives for five years on an uncharted island and eventually returns home. But he was not alone on the island where he learned not only how to fight and survive but also of his fathers corruption and unscrupulous business dealings. He returns to civilization a changed man, determined to put things right. He disguises himself with the hood of one of his mysterious island mentors, arms himself with a bow and sets about hunting down the men and women who have corrupted his city.
+        </item>
+        <item>
+            The adventures of an idealistic mad scientist and his field team of superpowered outcasts.\n
+            A re-imagining of one of DCs most beloved group of outcast Super Heroes: Robotman, Negative Man, Elasti-Girl and Crazy Jane, led by modern-day mad scientist Dr. Niles Caulder (The Chief). The Doom Patrols members each suffered horrible accidents that gave them superhuman abilities - but also left them scarred and disfigured. Traumatized and downtrodden, the team found purpose through The Chief, who brought them together to investigate the weirdest phenomena in existence - and to protect Earth from what they find. \n
+            Part support group, part Super Hero team, the Doom Patrol is a band of super-powered freaks who fight for a world that wants nothing to do with them. Picking up after the events of Titans, Doom Patrol will find these reluctant heroes in a place they never expected to be, called to action by none other than Cyborg, who comes to them with a mission hard to refuse, but with a warning that is hard to ignore: their lives will never, ever be the same.
+        </item>
+        <item>
+            Son Gokû, a fighter with a monkey tail, goes on a quest with an assortment of odd characters in search of the Dragon Balls, a set of crystals that can give its bearer anything they desire.\n
+            What starts off as a bizarre re-telling of the Chinese legend "Journey to the West" quickly transforms into pure madness. On a twisted version of Earth, the ridiculously strong child-fighter Son Gokû is joined by several companions in the quest for the seven "dragon balls", which, when assembled, will summon the Grand Dragon, who will grant the bearer of the balls one single wish. The problem is, the Grand Dragon can only be invoked once a year, and villains battle Goku and friends constantly for possession of the Dragon Balls.
+
+        </item>
+        <item>
+            Lucy, an aspiring Celestial Wizard, becomes a friend and ally to powerful wizards Natsu, Gray, and Erza, who are part of the (in)famous wizard guild, Fairy Tail.\n
+            Lucy, a 17 year old girl, sets out on journey to become a full-fledged wizard and joins the strongest and most (in) famous guild FAIRY TAIL where she meets Natsu, Happy, Gray and Erza, who treat her more like family than friends. This epic series takes us through all the dangers that the members of fairy tail face and eventually overcome through mutual love and friendship.
+
+        </item>
+        <item>
+            In a wacky Rhode Island town, a dysfunctional family strive to cope with everyday life as they are thrown from one crazy scenario to another.\n
+            Sick, twisted and politically incorrect, the animated series features the adventures of the Griffin family. Endearingly ignorant Peter and his stay-at-home wife Lois reside in Quahog, R.I., and have three kids. Meg, the eldest child, is a social outcast, and teenage Chris is awkward and clueless when it comes to the opposite sex. The youngest, Stewie, is a genius baby bent on killing his mother and destroying the world. The talking dog, Brian, keeps Stewie in check while sipping martinis and sorting through his own life issues.
+
+        </item>
+        <item>
+            After being struck by lightning, Barry Allen wakes up from his coma to discover hes been given the power of super speed, becoming the Flash, fighting crime in Central City.\n
+            Barry Allen is a Central City police forensic scientist with a reasonably happy life, despite the childhood trauma of a mysterious red and yellow lightning killing his mother and framing his father. All that changes when a massive particle accelerator accident leads to Barry being struck by lightning in his lab. Coming out of coma nine months later, Barry and his new friends at S.T.A.R labs find that he now has the ability to move at superhuman speed. Furthermore, Barry learns that he is but one of many affected by that event, most of whom are using their powers for evil. Determined to make a difference, Barry dedicates his life to fighting such threats, as The Flash. While he gains allies he never expected, there are also secret forces determined to aid and manipulate him for their own agenda.
+
+        </item>
+        <item>
+            When Dre discovers Zoey is questioning her belief in God, he undergoes a crisis of faith and leans on family members and coworkers for their input. Meanwhile, Bows brother Johan comes to stay with The Johnsons after living abroad and becomes an instant thorn in Dres side.\n
+
+        </item>
+        <item>
+            The story behind Detective James Gordons rise to prominence in Gotham City in the years before Batmans arrival.\n
+            In crime ridden Gotham City, Thomas and Martha Wayne are murdered before young Bruce Waynes eyes. Although Gotham City Police Department detectives, James Gordon, and his cynical partner, Harvey Bullock, seem to solaces the case quickly, things are not so simple. Inspired by Bruces traumatized desire for justice, Gordon vows to find it amid Gothams corruption. Thus begins Gordons lonely quest that would set him against his own comrades and the underworld with their own deadly rivalries and mysteries.\n
+            In the coming wars, innocence will be lost and compromises will be made as some criminals will fall as casualties while others will rise as super villains. All the while, young Bruce observes this war with a growing obsession that would one day drive him to seek his own justice against the evil of Gotham as The Batman.
+        </item>
+        <item>
+            A drama centered on the personal and professional lives of five surgical interns and their supervisors.\n
+            A medical based drama centered around Meredith Grey, an aspiring surgeon and daughter of one of the best surgeons, Dr. Ellis Grey. Throughout the series, Meredith goes through professional and personal challenges along with fellow surgeons at Seattle Grace Hospital.
+
+        </item>
+        <item>
+            In equal parts high-concept thriller and coming-of-age drama, HANNA follows the journey of an extraordinary young girl raised in the forest, as she evades the relentless pursuit of an off-book CIA agent and tries to unearth the truth behind who she is.\n
+            In equal parts high-concept thriller and coming-of-age drama, HANNA follows the journey of an extraordinary young girl raised in the forest, as she evades the relentless pursuit of an off-book CIA agent and tries to unearth the truth behind who she is.
+        </item>
+
+    </string-array>
+
+    <string-array name="data_tv_poster">
+        <item>@drawable/tv_poster_arrow</item>
+        <item>@drawable/tv_poster_doom_patrol</item>
+        <item>@drawable/tv_poster_dragon_ball</item>
+        <item>@drawable/tv_poster_fairytail</item>
+        <item>@drawable/tv_poster_family_guy</item>
+        <item>@drawable/tv_poster_flash</item>
+        <item>@drawable/tv_poster_god</item>
+        <item>@drawable/tv_poster_gotham</item>
+        <item>@drawable/tv_poster_grey_anatomy</item>
+        <item>@drawable/tv_poster_hanna</item>
+    </string-array>
+
 
 </resources>

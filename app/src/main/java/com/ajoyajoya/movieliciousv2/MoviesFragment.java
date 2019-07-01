@@ -1,20 +1,15 @@
 package com.ajoyajoya.movieliciousv2;
 
 
-import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,10 +24,9 @@ public class MoviesFragment extends Fragment {
     private String[] dataMovieCat;
     private String[] dataMovieDesc;
     private TypedArray dataMoviePoster;
-    private ListMovieAdapter adapter;
-    private ArrayList<Movie> movies;
+    // --Commented out by Inspection (2019-07-01 22:07):private ListMovieAdapter adapter;
     private RecyclerView rvCategory;
-    private ArrayList<Movie> list = new ArrayList<>();
+    private final ArrayList<Movie> list = new ArrayList<>();
 
     public MoviesFragment() {
         // Required empty public constructor
@@ -40,11 +34,10 @@ public class MoviesFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_movies, container, false);
-
         rvCategory = v.findViewById(R.id.lv_list_movie);
         rvCategory.setHasFixedSize(true);
 
@@ -59,7 +52,7 @@ public class MoviesFragment extends Fragment {
 
 
     private void addItem() {
-        movies = new ArrayList<>();
+        ArrayList<Movie> movies = new ArrayList<>();
         for (int i = 0; i < dataMovieName.length; i++) {
             Movie movie = new Movie();
             movie.setMoviePoster(dataMoviePoster.getResourceId(i, -1));
@@ -88,4 +81,6 @@ public class MoviesFragment extends Fragment {
         listMovieAdapter.setListMovie(list);
         rvCategory.setAdapter(listMovieAdapter);
     }
+
+
 }
