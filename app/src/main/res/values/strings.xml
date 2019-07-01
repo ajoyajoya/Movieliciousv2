@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Movielicious</string>
+    <string name="movie_title">A Star is Born</string>
+    <string name="movie_category">Drama | 1h 51min | 10/21/2016</string>
+    <string name="movie_desc">Against his father Odin will, The Mighty Thor a powerful but arrogant warrior god recklessly reignites an ancient war. Against his father Odin will, The Mighty Thor a powerful but arrogant warrior god recklessly reignites an ancient war. Against his father Odin will, The Mighty Thor a powerful but arrogant warrior god recklessly reignites an ancient war. \n  Against his father Odin will, The Mighty Thor a powerful but arrogant warrior god recklessly reignites an ancient war.  Against his father Odin will, The Mighty Thor a powerful but arrogant warrior god recklessly reignites an ancient war.  Against his father Odin will, The Mighty Thor a powerful but arrogant warrior god recklessly reignites an ancient war.</string>
+    <string name="movie_rate">7.1</string>
+    <string name="max_movie_rate">/10</string>
+    <string name="movie_crew_title">Featured Crew</string>
+    <string name="movie_crew_name1">James Mangold</string>
+    <string name="movie_crew_job1">Director, Screenplay, Story</string>
+    <string name="movie_crew_name2">David James Kelly</string>
+    <string name="movie_crew_job2">Story</string>
+    <string name="trailer_title">Trailer</string>
+    <string name="overview_title">Overview</string>
+    <string name="this_is_poster">This is for Poster Movie</string>
+    <string name="this_for_background_image">This for Background Image Trailer Link</string>
+    <string name="this_for_button">This for Button Play Trailer Link</string>
+
+
+    <string-array name="data_movie_name">
+        <item>A Star is Born (2018)</item>
+        <item>Aquaman (2018)</item>
+        <item>Avengers: Infinity War (2018)</item>
+        <item>Bird Box 2018</item>
+        <item>Bohemian Rhapsody (2018)</item>
+        <item>Bumblebee (2018)</item>
+        <item>Creed II (2018)</item>
+        <item>Deadpool 2 (2018)</item>
+        <item>How to Train Your Dragon: The Hidden World (2019)</item>
+        <item>Dragon Ball Super: Broly (2018)</item>
+    </string-array>
+
+    <string-array name="data_movie_rating">
+        <item>7.8</item>
+        <item>7.1</item>
+        <item>8.5</item>
+        <item>6.6</item>
+        <item>8.0</item>
+        <item>6.9</item>
+        <item>7.2</item>
+        <item>7.8</item>
+        <item>7.6</item>
+        <item>8.0</item>
+    </string-array>
+
+    <string-array name="data_movie_category">
+        <item>R | 2h 16min | Drama, Music, Romance | 5 October 2018 (USA)</item>
+        <item>PG-13 | 2h 23min | Action, Adventure, Fantasy | 21 December 2018 (USA)</item>
+        <item>PG-13 | 2h 29min | Action, Adventure, Sci-Fi | 27 April 2018 (USA)</item>
+        <item>R | 2h 4min | Drama, Horror, Sci-Fi | 21 December 2018 (USA)</item>
+        <item>PG-13 | 2h 14min | Biography, Drama, Music | 2 November 2018 (USA)</item>
+        <item>PG-13 | 1h 54min | Action, Adventure, Sci-Fi | 21 December 2018 (USA)</item>
+        <item>PG-13 | 2h 10min | Drama, Sport | 21 November 2018 (USA)</item>
+        <item>R | 1h 59min | Action, Adventure, Comedy | 18 May 2018 (USA)</item>
+        <item>PG | 1h 44min | Animation, Action, Adventure | 22 February 2019 (USA)</item>
+        <item>PG | 1h 40min | Animation, Action, Adventure | 16 January 2019 (USA)</item>
+    </string-array>
+
+    <string-array name="data_movie_desc">
+        <item>A musician helps a young singer find fame as age and alcoholism send his own career into a downward spiral. \n Seasoned musician Jackson Maine (Bradley Cooper) discovers-and falls in love with-struggling artist Ally (Gaga). She has just about given up on her dream to make it big as a singer - until Jack coaxes her into the spotlight. But even as Ally s career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.</item>
+        <item>Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land. \nArthur Curry, half human half from Atlantis, goes on a trip of a lifetime. Not only does this adventure compel him to come to terms with his real identity, but it also forces him to discover whether he is entirely worthy of fulfilling his own destiny: becoming a king.</item>
+        <item>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe. \nAs the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment, the fate of Earth and existence has never been more uncertain.</item>
+        <item>Five years after an ominous unseen presence drives most of society to suicide, a mother and her two children make a desperate bid to reach safety. \nIn the wake of an unknown global terror, a mother must find the strength to flee with her children down a treacherous river in search of safety. Due to unseen deadly forces, the perilous journey must be made blindly. Directed by Emmy winner Susanne Bier, Bird Box is a thriller starring Academy Award winner Sandra Bullock, John Malkovich, Sarah Paulson, and Trevante Rhodes.</item>
+        <item>The story of the legendary rock band Queen and lead singer Freddie Mercury, leading up to their famous performance at Live Aid (1985). \nBohemian Rhapsody is a foot-stomping celebration of Queen, their music and their extraordinary lead singer Freddie Mercury. Freddie defied stereotypes and shattered convention to become one of the most beloved entertainers on the planet. The film traces the meteoric rise of the band through their iconic songs and revolutionary sound. They reach unparalleled success, but in an unexpected turn Freddie, surrounded by darker influences, shuns Queen in pursuit of his solo career. Having suffered greatly without the collaboration of Queen, Freddie manages to reunite with his bandmates just in time for Live Aid. While bravely facing a recent AIDS diagnosis, Freddie leads the band in one of the greatest performances in the history of rock music. Queen cements a legacy that continues to inspire outsiders, dreamers and music lovers to this day.</item>
+        <item>On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small California beach town. On the cusp of turning 18 and trying to find her place in the world, Charlie Watson discovers Bumblebee, battle-scarred and broken. \nOn Cybertron, the Autobots, led by Optimus Prime, are on the verge of losing the Great Cybertronian War to their enemies, the Decepticons, and begin making preparations to leave the planet. The Decepticons led by Shockwave, Soundwave and Starscream ambush them during the evacuation, and Optimus sends a young scout, B-127, to Earth in order to set up a base of operations where the Autobots can regroup. B-127 reaches Earth alone in 1987, crash-landing in California and disrupting a training exercise being conducted by Sector 7, a secret government agency that monitors extraterrestrial activity on Earth. Sector 7 agent Colonel Jack Burns presumes B-127 to be a hostile invader and attacks, driving B-127 into the forest, where he is then ambushed by the Decepticon Blitzwing. When B-127 refuses to reveal Optimus  whereabouts, Blitzwing spitefully tears out his voice-box and damages his memory core. B-127 manages to destroy Blitzwing before collapsing from his wounds. Before entering stasis</item>
+        <item>Under the tutelage of Rocky Balboa, newly crowned heavyweight champion Adonis Creed faces off against Viktor Drago, the son of Ivan Drago. \nYears after Adonis Creed made a name for himself under Rocky Balboa s mentorship, the young boxer becomes the Heavyweight Champion of the World. While life is good with that victory and his marriage to Bianca, trouble comes to Philadelphia when Ivan Drago, the Russian boxer who killed Adonis  father, Apollo, arrives with his son, Viktor, to challenge Adonis. Against Rocky s advice, Adonis accepts the challenge without his mentor s participation and pays the price in a punishing bout he wins only by a technicality. Now injured and demoralized, Adonis cannot bring himself to back into the game, leaving his spirit and title in jeopardy. Together, Adonis  family and Rocky must find a way to rekindle Adonis  fighting spirit to face the future in whatever choice he makes. Meanwhile, the Drago family have its own troubles trying to regain the respect in their homeland that they lost at Rocky s hands as they wonder whether is it truly worth it.</item>
+        <item>Foul-mouthed mutant mercenary Wade Wilson (AKA. Deadpool), brings together a team of fellow mutant rogues to protect a young boy with supernatural abilities from the brutal, time-traveling cyborg, Cable. \nAfter losing Vanessa (Morena Baccarin), the love of his life, 4th-wall breaking mercenary Wade Wilson aka Deadpool (Ryan Reynolds) must assemble a team and protect a young, full-figured mutant Russell Collins aka Firefist (Julian Dennison) from Cable (Josh Brolin), a no-nonsense, dangerous cyborg from the future, and must also learn the most important lesson of all: to be part of a family again.</item>
+        <item>When Hiccup discovers Toothless isn t the only Night Fury, he must seek "The Hidden World", a secret Dragon Utopia before a hired tyrant named Grimmel finds it first. \nAs Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless  discovery of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and Hiccup s reign as village chief is tested, both dragon and rider must make impossible decisions to save their kind.</item>
+        <item>Goku and Vegeta encounter Broly, a Saiyan warrior unlike any fighter they ve faced before. \nGoku and Vegeta encounter Broly, a Saiyan warrior unlike any fighter they ve faced before.Knowing that there are increasingly powerful forces in the universe that he has yet to encounter, Goku spends all of his time training to achieve even greater strength. But, one fateful day a mysterious new Saiyan appears before Goku and Vegeta: Broly. How can a Saiyan a member of the proud warrior race that was completely annihilated after the destruction of Planet Vegeta appear here on Earth? With Friezas return from hell, a fierce battle awaits the three mighty Saiyans who have followed completely different destinies.</item>
+    </string-array>
+
+    <string-array name="data_movie_poster">
+        <item>@drawable/poster_a_star</item>
+        <item>@drawable/poster_aquaman</item>
+        <item>@drawable/poster_avengerinfinity</item>
+        <item>@drawable/poster_birdbox</item>
+        <item>@drawable/poster_bohemian</item>
+        <item>@drawable/poster_bumblebee</item>
+        <item>@drawable/poster_creed</item>
+        <item>@drawable/poster_deadpool</item>
+        <item>@drawable/poster_dragon</item>
+        <item>@drawable/poster_dragonball</item>
+    </string-array>
+    <string name="title_activity_main_tabbed">Movielicious</string>
+    <string name="tab_text_1">MOVIES</string>
+    <string name="tab_text_2">TV SHOWS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

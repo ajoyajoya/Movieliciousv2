@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#464072</color>
+    <color name="colorPrimaryDark">#262626</color>
+    <color name="colorPrimaryLightest">#FFFFFF</color>
+    <color name="colorAccent">#4F4D8C</color>
+    <color name="colorPrimaryLight" tools:keep="@color/colorPrimaryLight">#8F8DBF</color>
+    <color name="colorAnotherPrime" tools:keep="@color/colorAnotherPrime">#2E4059</color>
+
+    <!-- Splash Screen theme. -->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+</resources>
