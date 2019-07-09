@@ -15,6 +15,7 @@
     <string name="this_is_poster">This is for Poster Movie</string>
     <string name="this_for_background_image">This for Background Image Trailer Link</string>
     <string name="this_for_button">This for Button Play Trailer Link</string>
+    <string name="change_language_settings" tools:keep="@string/change_language_settings">Change Language Setting</string>
 
 
     <string-array name="data_movie_name">

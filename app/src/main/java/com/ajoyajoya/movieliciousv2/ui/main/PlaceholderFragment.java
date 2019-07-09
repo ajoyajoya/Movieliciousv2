@@ -32,8 +32,11 @@ public class PlaceholderFragment extends Fragment {
 //    }
 // --Commented out by Inspection STOP (2019-07-01 22:07)
 
+
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
         int index = 1;
@@ -57,4 +60,7 @@ public class PlaceholderFragment extends Fragment {
         });
         return root;
     }
+
+
+
 }

@@ -46,9 +46,10 @@ public class TvshowFragment extends Fragment {
 
         showRecyclerGrid();
 
-
         return v;
     }
+
+
     private void addItem() {
         ArrayList<Movie> movies = new ArrayList<>();
         for (int i = 0; i < dataTVName.length; i++) {
@@ -81,6 +82,7 @@ public class TvshowFragment extends Fragment {
 
 
     }
+
 
 
 }
