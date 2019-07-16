@@ -5,6 +5,18 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Transformations;
 import android.arch.lifecycle.ViewModel;
+import android.util.Log;
+
+import com.ajoyajoya.movieliciousv2.MovieItems;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import cz.msebera.android.httpclient.Header;
 
 class PageViewModel extends ViewModel {
 
@@ -23,4 +35,8 @@ class PageViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
+
+
+
+
 }

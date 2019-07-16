@@ -1,6 +1,8 @@
 package com.ajoyajoya.movieliciousv2;
 
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -19,66 +22,72 @@ import java.util.ArrayList;
  */
 public class MoviesFragment extends Fragment {
 
-    private String[] dataMovieName;
-    private String[] dataMovieRate;
-    private String[] dataMovieCat;
-    private String[] dataMovieDesc;
-    private TypedArray dataMoviePoster;
+    private MovieAdapter adapter;
+    private ProgressBar progressBar;
+    private MainViewModel mainViewModel;
+
     // --Commented out by Inspection (2019-07-01 22:07):private ListMovieAdapter adapter;
     private RecyclerView rvCategory;
     private final ArrayList<Movie> list = new ArrayList<>();
+
 
     public MoviesFragment() {
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
         View v = inflater.inflate(R.layout.fragment_movies, container, false);
-        rvCategory = v.findViewById(R.id.lv_list_movie);
-        rvCategory.setHasFixedSize(true);
 
-        prepare();
-        addItem();
 
-        showRecycleList();
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mainViewModel.getMovies().observe(this, getMovies);
+
+        adapter = new MovieAdapter(getContext());
+        adapter.notifyDataSetChanged();
+        RecyclerView recyclerView = v.findViewById(R.id.lv_list_movie);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
+        //edtCity = v.findViewById(R.id.editCity);
+        progressBar = v.findViewById(R.id.progressBar);
+
+        progressBar.getIndeterminateDrawable().setColorFilter(0xFFFFFFFF,android.graphics.PorterDuff.Mode.MULTIPLY);
+
+        String movies = "";
+        mainViewModel.setMovies(movies);
+        String genres = "";
+        mainViewModel.setGenres(genres);
+        showLoading(true);
 
         return v;
     }
 
-
-    private void addItem() {
-        ArrayList<Movie> movies = new ArrayList<>();
-        for (int i = 0; i < dataMovieName.length; i++) {
-            Movie movie = new Movie();
-            movie.setMoviePoster(dataMoviePoster.getResourceId(i, -1));
-            movie.setMovieName(dataMovieName[i]);
-            movie.setMovieRated(dataMovieRate[i]);
-            movie.setMovieCategory(dataMovieCat[i]);
-            movie.setMovieDesc(dataMovieDesc[i]);
-
-            movies.add(movie);
+    private Observer<ArrayList<MovieItems>> getMovies = new Observer<ArrayList<MovieItems>>() {
+        @Override
+        public void onChanged(ArrayList<MovieItems> movieItems) {
+            if (movieItems != null) {
+                adapter.setData(movieItems);
+                showLoading(false);
+            }
         }
-        list.addAll(movies);
+    };
+
+
+    private void showLoading(Boolean state) {
+        if (state) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
     }
 
-    private void prepare() {
-        dataMovieName = getResources().getStringArray(R.array.data_movie_name);
-        dataMovieRate = getResources().getStringArray(R.array.data_movie_rating);
-        dataMovieCat = getResources().getStringArray(R.array.data_movie_category);
-        dataMovieDesc = getResources().getStringArray(R.array.data_movie_desc);
-        dataMoviePoster = getResources().obtainTypedArray(R.array.data_movie_poster);
 
-    }
 
-    private void showRecycleList(){
-        rvCategory.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ListMovieAdapter listMovieAdapter = new ListMovieAdapter(getActivity());
-        listMovieAdapter.setListMovie(list);
-        rvCategory.setAdapter(listMovieAdapter);
-    }
 
 
 }

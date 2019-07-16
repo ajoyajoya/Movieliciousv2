@@ -17,6 +17,9 @@
     <string name="this_for_button">This for Button Play Trailer Link</string>
     <string name="change_language_settings" tools:keep="@string/change_language_settings">Change Language Setting</string>
 
+    <string name="language_id">en-US</string>
+    <string name="date_release">Release Date</string>
+
 
     <string-array name="data_movie_name">
         <item>A Star is Born (2018)</item>
