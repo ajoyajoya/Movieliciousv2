@@ -23,14 +23,10 @@ public class MainViewModel extends ViewModel {
     private static final String API_KEY = "6c850abf79ae2a311643afba9e9ff654";
     private MutableLiveData<ArrayList<MovieItems>> listMovies = new MutableLiveData<>();
 
-    private MutableLiveData<ArrayList<GenreItems>> listGenres = new MutableLiveData<>();
-
-    //private final String LANGUAGE_ID = Integer.toString(R.string.language_id);
+    private MutableLiveData<ArrayList<TvItems>> listTv = new MutableLiveData<>();
 
     String languageID = "";
 
-
-    //2131689522
 
     void setMovies(final String movies) {
         AsyncHttpClient client = new AsyncHttpClient();
@@ -68,9 +64,9 @@ public class MainViewModel extends ViewModel {
         });
     }
 
-    void setGenres(final String genres) {
+    void setTvs(final String tvies) {
         AsyncHttpClient client = new AsyncHttpClient();
-        final ArrayList<GenreItems> genreItemsItems = new ArrayList<>();
+        final ArrayList<TvItems> listItems = new ArrayList<>();
 
         if (Locale.getDefault().getLanguage() == "in"){
             languageID = "id-ID";
@@ -78,7 +74,7 @@ public class MainViewModel extends ViewModel {
             languageID = "en-US";
         }
 
-        String url = "https://api.themoviedb.org/3/genre/movie/list?api_key="+API_KEY+"&language="+languageID;
+        String url = "https://api.themoviedb.org/3/tv/top_rated?api_key="+API_KEY+"&language="+languageID;
         System.out.println(url);
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
@@ -86,14 +82,13 @@ public class MainViewModel extends ViewModel {
                 try {
                     String result = new String(responseBody);
                     JSONObject responseObject = new JSONObject(result);
-                    JSONArray list = responseObject.getJSONArray("genres");
+                    JSONArray list = responseObject.getJSONArray("results");
                     for (int i = 0; i < list.length(); i++) {
-                        JSONObject genre = list.getJSONObject(i);
-                        GenreItems genreItems = new GenreItems(genre);
-                        genreItemsItems.add(genreItems);
+                        JSONObject tvies = list.getJSONObject(i);
+                        TvItems tvItems = new TvItems(tvies);
+                        listItems.add(tvItems);
                     }
-                    listGenres.postValue(genreItemsItems);
-
+                    listTv.postValue(listItems);
                 } catch (Exception e) {
                     Log.d("Exception", e.getMessage());
                 }
@@ -105,10 +100,13 @@ public class MainViewModel extends ViewModel {
         });
     }
 
+
+
     LiveData<ArrayList<MovieItems>> getMovies() {
         return listMovies;
     }
-    LiveData<ArrayList<GenreItems>> getGenres() {
-        return listGenres;
+    LiveData<ArrayList<TvItems>> getTvs() {
+        return listTv;
     }
+
 }

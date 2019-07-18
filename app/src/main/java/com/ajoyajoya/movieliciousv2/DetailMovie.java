@@ -30,7 +30,6 @@ public class DetailMovie extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_movie);
 
-        //final String title1 = "Detail Movie";
         setActionBarTitle();
 
         // add back arrow to toolbar

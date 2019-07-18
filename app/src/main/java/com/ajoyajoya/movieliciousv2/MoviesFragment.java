@@ -61,8 +61,6 @@ public class MoviesFragment extends Fragment {
         String movies = "";
         mainViewModel.setMovies(movies);
         String genres = "";
-        mainViewModel.setGenres(genres);
-        showLoading(true);
 
         return v;
     }

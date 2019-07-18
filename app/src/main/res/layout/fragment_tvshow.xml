@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context=".TvshowFragment">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:progressTint="#FFFFFF"
+        android:visibility="visible" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/lv_list_tv"
         android:layout_width="match_parent"
