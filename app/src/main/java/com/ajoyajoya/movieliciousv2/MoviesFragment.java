@@ -60,7 +60,6 @@ public class MoviesFragment extends Fragment {
 
         String movies = "";
         mainViewModel.setMovies(movies);
-        String genres = "";
 
         return v;
     }

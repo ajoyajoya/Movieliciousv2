@@ -25,7 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
         android:layout_toEndOf="@id/img_poster_movie"
         android:fontFamily="@font/open_sans_semibold_1"
         android:shadowColor="#7F000000"
@@ -37,7 +36,6 @@
         android:textSize="40sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/txt_movie_crew_title"
         app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +69,7 @@
         android:textColor="@color/colorPrimaryLightest"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
-        app:layout_constraintTop_toBottomOf="@+id/txt_movie_rate" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_cat" />
 
     <TextView
         android:id="@+id/txt_movie_crew_name1"
@@ -143,20 +141,22 @@
 
     <TextView
         android:id="@+id/txt_movie_cat"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_movie_crew_job2"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_toEndOf="@id/img_poster_movie"
         android:ellipsize="end"
         android:fontFamily="@font/open_sans"
-        android:maxLines="2"
+        android:maxLines="5"
         android:text="@string/movie_category"
         android:textColor="@color/colorPrimaryLightest"
         android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_poster_movie"
-        app:layout_constraintTop_toBottomOf="@+id/txt_movie_crew_job2" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_rate" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailMovie"/>
-        <!-- <activity android:name=".DetailMovie" /> -->
+        <activity
+            android:name=".PopupVideo"
+            android:theme="@style/AppTheme.TrailerPopup" />
+        <activity android:name=".DetailMovie" /> <!-- <activity android:name=".DetailMovie" /> -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">

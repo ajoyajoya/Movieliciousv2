@@ -1,29 +1,47 @@
 package com.ajoyajoya.movieliciousv2;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
-public class DetailMovie extends AppCompatActivity {
+public class DetailMovie extends AppCompatActivity{
 
-    public static final String EXTRA_MOVIE = "extra_movie";
+    private DetailMovieAdapter adapter;
+    private ProgressBar progressBar;
+    private MainViewModel mainViewModel;
 
-    private ScrollView bgMovieDetail;
+    public static final String EXTRA_MOVIE_ID = "extra_movie_id";
+    public static final String EXTRA_MOVIE_NAME = "extra_movie_name";
+    public static final String EXTRA_TYPE_DETAIL = "extra_type_detail";
+
+
+
+    //private RelativeLayout bgMovieDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,53 +50,23 @@ public class DetailMovie extends AppCompatActivity {
 
         setActionBarTitle();
 
+        String movie_type = getIntent().getStringExtra(EXTRA_TYPE_DETAIL);
+
         // add back arrow to toolbar
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        TextView tvMovieName = findViewById(R.id.txt_movie_name);
-        TextView tvMovieRate = findViewById(R.id.txt_movie_rate);
-        TextView tvMovieCat = findViewById(R.id.txt_movie_cat);
-        TextView tvMovieDesc = findViewById(R.id.txt_movie_desc);
-        ImageView imgMoviePoster = findViewById(R.id.img_poster_movie);
-        ImageView imgTrailerLink = findViewById(R.id.img_trailer_link);
-        bgMovieDetail = findViewById(R.id.bg_movie_detail);
-
-        final Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-
-
-        tvMovieName.setText(movie.getMovieName());
-        tvMovieRate.setText(movie.getMovieRated());
-        tvMovieCat.setText(movie.getMovieCategory());
-        tvMovieDesc.setText(movie.getMovieDesc());
-
-        Glide.with(this).load(movie.getMoviePoster()).into(imgMoviePoster);
-        Glide.with(this).load(movie.getMoviePoster()).into(imgTrailerLink);
-
-        //noinspection deprecation
-        Glide.with(this).load(movie.getMoviePoster())
-                .apply(RequestOptions.bitmapTransform(new BlurTransformation(15, 3)))
-                .into(new SimpleTarget<Drawable>() {
-                    @Override
-                    public void onResourceReady(@NonNull Drawable resource, Transition<? super Drawable> transition) {
-                        bgMovieDetail.setBackground(resource);
-                    }
-                });
-
-        float backgroundRating = Float.parseFloat(movie.getMovieRated());
-
-        if (backgroundRating>=8.0){
-            tvMovieRate.setTextColor(Color.parseColor("#3498db"));
-        } else if (backgroundRating>=7.0){
-            tvMovieRate.setTextColor(Color.parseColor("#2ecc71"));
-        } else if (backgroundRating>=6.0){
-            tvMovieRate.setTextColor(Color.parseColor("#f1c40f"));
-        } else if (backgroundRating>=5.0){
-            tvMovieRate.setTextColor(Color.parseColor("#e67e22"));
-        } else {
-            tvMovieRate.setTextColor(Color.parseColor("#e74c3c"));
+        switch (movie_type){
+            case "moviedetail":
+                //Toast.makeText(this, "Detail Movie", Toast.LENGTH_LONG).show();
+                showDetailMovie();
+                break;
+            case "tvshowdetail":
+                //Toast.makeText(this, "Detail TV Show", Toast.LENGTH_LONG).show();
+                showDetailTv();
+                break;
         }
 
 
@@ -86,7 +74,9 @@ public class DetailMovie extends AppCompatActivity {
     }
 
     private void setActionBarTitle(){
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Detail Movie");
+
+        String movie_name = getIntent().getStringExtra(EXTRA_MOVIE_NAME);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(movie_name);
     }
 
     @Override
@@ -98,5 +88,77 @@ public class DetailMovie extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private Observer<ArrayList<DetailMovieItems>> getDetailMovies = new Observer<ArrayList<DetailMovieItems>>() {
+        @Override
+        public void onChanged(ArrayList<DetailMovieItems> detailMovieItems) {
+            if (detailMovieItems != null) {
+                adapter.setData(detailMovieItems);
+                showLoading(false);
+            }
+        }
+    };
+
+    private Observer<ArrayList<DetailMovieItems>> getDetailTvies = new Observer<ArrayList<DetailMovieItems>>() {
+        @Override
+        public void onChanged(ArrayList<DetailMovieItems> detailMovieItems) {
+            if (detailMovieItems != null) {
+                adapter.setData(detailMovieItems);
+                showLoading(false);
+            }
+        }
+    };
+
+
+    private void showLoading(Boolean state) {
+        if (state) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
+    }
+
+    private void showDetailMovie(){
+        String movie_id = getIntent().getStringExtra(EXTRA_MOVIE_ID);
+        System.out.println(movie_id);
+
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mainViewModel.getDetailMovies().observe(this, getDetailMovies);
+
+        adapter = new DetailMovieAdapter(this);
+        adapter.notifyDataSetChanged();
+        RecyclerView recyclerView = findViewById(R.id.lv_list_detail_movie);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        progressBar = findViewById(R.id.progressBar);
+
+        progressBar.getIndeterminateDrawable().setColorFilter(0xFF673AB7,android.graphics.PorterDuff.Mode.MULTIPLY);
+
+        String movies_id = getIntent().getStringExtra(EXTRA_MOVIE_ID);
+        mainViewModel.setDetailMovies(movies_id);
+    }
+
+    private void showDetailTv(){
+        String movie_id = getIntent().getStringExtra(EXTRA_MOVIE_ID);
+        System.out.println(movie_id);
+
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mainViewModel.getDetailTvies().observe(this, getDetailTvies);
+
+        adapter = new DetailMovieAdapter(this);
+        adapter.notifyDataSetChanged();
+        RecyclerView recyclerView = findViewById(R.id.lv_list_detail_movie);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        progressBar = findViewById(R.id.progressBar);
+
+        progressBar.getIndeterminateDrawable().setColorFilter(0xFF673AB7,android.graphics.PorterDuff.Mode.MULTIPLY);
+
+        String movies_id = getIntent().getStringExtra(EXTRA_MOVIE_ID);
+        mainViewModel.setDetailTV(movies_id);
+    }
+
 
 }

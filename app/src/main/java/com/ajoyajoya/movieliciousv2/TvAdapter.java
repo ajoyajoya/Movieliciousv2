@@ -1,6 +1,7 @@
 package com.ajoyajoya.movieliciousv2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -47,7 +48,12 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
         tvViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Kamu Memilih "+  mData1.get(position).getTvId(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Kamu Memilih "+  mData1.get(position).getTvId(), Toast.LENGTH_SHORT).show();
+                Intent moveIntent = new Intent(context, DetailMovie.class);
+                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_ID, String.valueOf(mData1.get(position).getTvId()));
+                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_NAME, String.valueOf(mData1.get(position).getTvName()));
+                moveIntent.putExtra(DetailMovie.EXTRA_TYPE_DETAIL, "tvshowdetail");
+                context.startActivity(moveIntent);
             }
         });
     }

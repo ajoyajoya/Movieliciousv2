@@ -1,6 +1,7 @@
 package com.ajoyajoya.movieliciousv2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -49,7 +50,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         movieViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Kamu Memilih "+  mData.get(position).getMovieId(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Kamu Memilih "+  mData.get(position).getMovieId(), Toast.LENGTH_SHORT).show();
+
+                Intent moveIntent = new Intent(context, DetailMovie.class);
+                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_ID, String.valueOf(mData.get(position).getMovieId()));
+                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_NAME, String.valueOf(mData.get(position).getMovieName()));
+                moveIntent.putExtra(DetailMovie.EXTRA_TYPE_DETAIL, "moviedetail");
+                context.startActivity(moveIntent);
+
             }
         });
 
@@ -96,11 +104,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
                     .apply(new RequestOptions())
                     .into(imgMoviePoster);
 
-
-
-            //DecimalFormat dc = new DecimalFormat("#.00");
-            //float backgroundRating = Float.parseFloat(movieItems.getMovieRated());
-            //double hasRated = Double.valueOf(dc.format(backgroundRating));
 
             float hasRated = Float.parseFloat(movieItems.getMovieRated());
 

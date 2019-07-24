@@ -20,6 +20,9 @@
     <string name="language_id">en-US</string>
     <string name="date_release">Release Date</string>
 
+    <string name="failed_initialized">Failure to Initialized</string>
+    <string name="video_notfound">Video Not Found</string>
+
 
     <string-array name="data_movie_name">
         <item>A Star is Born (2018)</item>

@@ -19,6 +19,10 @@
 
     <string name="language_id">id-ID</string>
     <string name="date_release">Tanggal Rilis</string>
+    <string name="failed_initialized">Gagal Menginisialisasi</string>
+
+    <string name="video_notfound">Video Tidak Ditemukan</string>
+
 
 
     <string-array name="data_movie_name">

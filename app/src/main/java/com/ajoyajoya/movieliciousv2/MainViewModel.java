@@ -25,6 +25,11 @@ public class MainViewModel extends ViewModel {
 
     private MutableLiveData<ArrayList<TvItems>> listTv = new MutableLiveData<>();
 
+
+    private MutableLiveData<ArrayList<DetailMovieItems>> listDetailMovies = new MutableLiveData<>();
+
+    private MutableLiveData<ArrayList<DetailMovieItems>> listDetailTvies = new MutableLiveData<>();
+
     String languageID = "";
 
 
@@ -100,6 +105,189 @@ public class MainViewModel extends ViewModel {
         });
     }
 
+    void setDetailMovies(final String movies_id) {
+        final AsyncHttpClient client = new AsyncHttpClient();
+        final AsyncHttpClient client2 = new AsyncHttpClient();
+        final ArrayList<DetailMovieItems> listItems = new ArrayList<>();
+
+        if (Locale.getDefault().getLanguage() == "in"){
+            languageID = "id-ID";
+        } else {
+            languageID = "en-US";
+        }
+
+        String url = "https://api.themoviedb.org/3/movie/"+movies_id+"?api_key="+API_KEY+"&language="+languageID;
+        final String url2 = "https://api.themoviedb.org/3/movie/"+movies_id+"/credits?api_key="+API_KEY;
+        final String url3 = "https://api.themoviedb.org/3/movie/"+movies_id+"/videos?api_key="+API_KEY;
+        //final String [] combineUrl = {url, url2, url3};
+        //System.out.println(combineUrl.toString());
+
+            client.get(url, new AsyncHttpResponseHandler() {
+
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                    try {
+                        final String result = new String(responseBody);
+                        JSONObject [] responseObject = new JSONObject[4];
+
+                        client.get(url2, new AsyncHttpResponseHandler() {
+                            @Override
+                            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                                try {
+                                    final String result2 = new String(responseBody);
+                                    JSONObject [] responseObject = new JSONObject[4];
+
+                                    client.get(url3, new AsyncHttpResponseHandler() {
+                                        @Override
+                                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                                            try {
+                                                String result3 = new String(responseBody);
+                                                JSONObject [] responseObject = new JSONObject[4];
+                                                responseObject[0] = new JSONObject(result);
+                                                responseObject[1] = new JSONObject(result2);
+                                                responseObject[2] = new JSONObject(result3);
+                                                responseObject[3] = responseObject[0].put("type_detail","moviedetail");;
+
+                                                System.out.println("Result"+responseObject[0]);
+                                                System.out.println("Result"+responseObject[1]);
+                                                System.out.println("Result"+responseObject[2]);
+
+                                                DetailMovieItems detailMovieItems = new DetailMovieItems(responseObject);
+                                                listItems.add(detailMovieItems);
+                                                listDetailMovies.postValue(listItems);
+
+
+                                            } catch (Exception e) {
+                                                Log.d("Exception", e.getMessage());
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                                            Log.d("onFailure", error.getMessage());
+                                        }
+                                    });
+
+
+                                } catch (Exception e) {
+                                    Log.d("Exception", e.getMessage());
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                                Log.d("onFailure", error.getMessage());
+                            }
+                        });
+
+
+                    } catch (Exception e) {
+                        Log.d("Exception", e.getMessage());
+                    }
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                    Log.d("onFailure", error.getMessage());
+                }
+            });
+
+
+
+    }
+
+
+    void setDetailTV(final String tvies_id) {
+        final AsyncHttpClient client = new AsyncHttpClient();
+        final AsyncHttpClient client2 = new AsyncHttpClient();
+        final ArrayList<DetailMovieItems> listItems = new ArrayList<>();
+
+        if (Locale.getDefault().getLanguage() == "in"){
+            languageID = "id-ID";
+        } else {
+            languageID = "en-US";
+        }
+
+        String url = "https://api.themoviedb.org/3/tv/"+tvies_id+"?api_key="+API_KEY+"&language="+languageID;
+        final String url2 = "https://api.themoviedb.org/3/tv/"+tvies_id+"/credits?api_key="+API_KEY;
+        final String url3 = "https://api.themoviedb.org/3/tv/"+tvies_id+"/videos?api_key="+API_KEY;
+        //final String [] combineUrl = {url, url2, url3};
+        //System.out.println(combineUrl.toString());
+
+        client.get(url, new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    final String result = new String(responseBody);
+                    JSONObject [] responseObject = new JSONObject[4];
+
+                    client.get(url2, new AsyncHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                            try {
+                                final String result2 = new String(responseBody);
+                                JSONObject [] responseObject = new JSONObject[4];
+
+                                client.get(url3, new AsyncHttpResponseHandler() {
+                                    @Override
+                                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                                        try {
+                                            String result3 = new String(responseBody);
+                                            JSONObject [] responseObject = new JSONObject[4];
+                                            responseObject[0] = new JSONObject(result);
+                                            responseObject[1] = new JSONObject(result2);
+                                            responseObject[2] = new JSONObject(result3);
+                                            responseObject[3] = responseObject[0].put("type_detail","tvshowdetail");;
+
+                                            System.out.println("Result"+responseObject[0]);
+                                            System.out.println("Result"+responseObject[1]);
+                                            System.out.println("Result"+responseObject[2]);
+
+                                            DetailMovieItems detailMovieItems = new DetailMovieItems(responseObject);
+                                            listItems.add(detailMovieItems);
+                                            listDetailTvies.postValue(listItems);
+
+
+                                        } catch (Exception e) {
+                                            Log.d("Exception", e.getMessage());
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                                        Log.d("onFailure", error.getMessage());
+                                    }
+                                });
+
+
+                            } catch (Exception e) {
+                                Log.d("Exception", e.getMessage());
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                            Log.d("onFailure", error.getMessage());
+                        }
+                    });
+
+
+                } catch (Exception e) {
+                    Log.d("Exception", e.getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("onFailure", error.getMessage());
+            }
+        });
+
+
+
+    }
+
 
 
     LiveData<ArrayList<MovieItems>> getMovies() {
@@ -107,6 +295,12 @@ public class MainViewModel extends ViewModel {
     }
     LiveData<ArrayList<TvItems>> getTvs() {
         return listTv;
+    }
+    LiveData<ArrayList<DetailMovieItems>> getDetailMovies() {
+        return listDetailMovies;
+    }
+    LiveData<ArrayList<DetailMovieItems>> getDetailTvies() {
+        return listDetailTvies;
     }
 
 }
