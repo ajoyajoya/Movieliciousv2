@@ -58,7 +58,6 @@
         tools:ignore="RtlHardcoded" />
 
     <TextView
-        android:id="@+id/txt_tv_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -71,7 +70,6 @@
         android:visibility="gone"/>
 
     <TextView
-        android:id="@+id/txt_tv_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

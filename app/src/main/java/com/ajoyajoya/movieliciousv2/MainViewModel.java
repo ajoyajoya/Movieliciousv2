@@ -3,7 +3,6 @@ package com.ajoyajoya.movieliciousv2;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import android.content.res.Resources;
 import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -21,30 +20,30 @@ import cz.msebera.android.httpclient.Header;
 public class MainViewModel extends ViewModel {
 
     private static final String API_KEY = "6c850abf79ae2a311643afba9e9ff654";
-    private MutableLiveData<ArrayList<MovieItems>> listMovies = new MutableLiveData<>();
+    private final MutableLiveData<ArrayList<MovieItems>> listMovies = new MutableLiveData<>();
 
-    private MutableLiveData<ArrayList<TvItems>> listTv = new MutableLiveData<>();
-
-
-    private MutableLiveData<ArrayList<DetailMovieItems>> listDetailMovies = new MutableLiveData<>();
-
-    private MutableLiveData<ArrayList<DetailMovieItems>> listDetailTvies = new MutableLiveData<>();
-
-    String languageID = "";
+    private final MutableLiveData<ArrayList<TvItems>> listTv = new MutableLiveData<>();
 
 
-    void setMovies(final String movies) {
+    private final MutableLiveData<ArrayList<DetailMovieItems>> listDetailMovies = new MutableLiveData<>();
+
+    private final MutableLiveData<ArrayList<DetailMovieItems>> listDetailTvies = new MutableLiveData<>();
+
+    private String languageID = "";
+
+
+    void setMovies() {
         AsyncHttpClient client = new AsyncHttpClient();
         final ArrayList<MovieItems> listItems = new ArrayList<>();
 
-        if (Locale.getDefault().getLanguage() == "in"){
+        if (Locale.getDefault().getLanguage().equals("in")){
             languageID = "id-ID";
         } else {
             languageID = "en-US";
         }
 
         String url = "https://api.themoviedb.org/3/movie/upcoming?api_key="+API_KEY+"&language="+languageID;
-        System.out.println(url);
+        //System.out.println(url);
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -69,18 +68,18 @@ public class MainViewModel extends ViewModel {
         });
     }
 
-    void setTvs(final String tvies) {
+    void setTvs() {
         AsyncHttpClient client = new AsyncHttpClient();
         final ArrayList<TvItems> listItems = new ArrayList<>();
 
-        if (Locale.getDefault().getLanguage() == "in"){
+        if (Locale.getDefault().getLanguage().equals("in")){
             languageID = "id-ID";
         } else {
             languageID = "en-US";
         }
 
         String url = "https://api.themoviedb.org/3/tv/top_rated?api_key="+API_KEY+"&language="+languageID;
-        System.out.println(url);
+        //System.out.println(url);
         client.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -107,10 +106,9 @@ public class MainViewModel extends ViewModel {
 
     void setDetailMovies(final String movies_id) {
         final AsyncHttpClient client = new AsyncHttpClient();
-        final AsyncHttpClient client2 = new AsyncHttpClient();
         final ArrayList<DetailMovieItems> listItems = new ArrayList<>();
 
-        if (Locale.getDefault().getLanguage() == "in"){
+        if (Locale.getDefault().getLanguage().equals("in")){
             languageID = "id-ID";
         } else {
             languageID = "en-US";
@@ -128,14 +126,12 @@ public class MainViewModel extends ViewModel {
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                     try {
                         final String result = new String(responseBody);
-                        JSONObject [] responseObject = new JSONObject[4];
 
                         client.get(url2, new AsyncHttpResponseHandler() {
                             @Override
                             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                                 try {
                                     final String result2 = new String(responseBody);
-                                    JSONObject [] responseObject = new JSONObject[4];
 
                                     client.get(url3, new AsyncHttpResponseHandler() {
                                         @Override
@@ -146,11 +142,11 @@ public class MainViewModel extends ViewModel {
                                                 responseObject[0] = new JSONObject(result);
                                                 responseObject[1] = new JSONObject(result2);
                                                 responseObject[2] = new JSONObject(result3);
-                                                responseObject[3] = responseObject[0].put("type_detail","moviedetail");;
+                                                responseObject[3] = responseObject[0].put("type_detail","moviedetail");
 
-                                                System.out.println("Result"+responseObject[0]);
-                                                System.out.println("Result"+responseObject[1]);
-                                                System.out.println("Result"+responseObject[2]);
+                                                //System.out.println("Result"+responseObject[0]);
+                                                //System.out.println("Result"+responseObject[1]);
+                                                //System.out.println("Result"+responseObject[2]);
 
                                                 DetailMovieItems detailMovieItems = new DetailMovieItems(responseObject);
                                                 listItems.add(detailMovieItems);
@@ -199,10 +195,9 @@ public class MainViewModel extends ViewModel {
 
     void setDetailTV(final String tvies_id) {
         final AsyncHttpClient client = new AsyncHttpClient();
-        final AsyncHttpClient client2 = new AsyncHttpClient();
         final ArrayList<DetailMovieItems> listItems = new ArrayList<>();
 
-        if (Locale.getDefault().getLanguage() == "in"){
+        if (Locale.getDefault().getLanguage().equals("in")){
             languageID = "id-ID";
         } else {
             languageID = "en-US";
@@ -220,14 +215,12 @@ public class MainViewModel extends ViewModel {
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     final String result = new String(responseBody);
-                    JSONObject [] responseObject = new JSONObject[4];
 
                     client.get(url2, new AsyncHttpResponseHandler() {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                             try {
                                 final String result2 = new String(responseBody);
-                                JSONObject [] responseObject = new JSONObject[4];
 
                                 client.get(url3, new AsyncHttpResponseHandler() {
                                     @Override
@@ -238,11 +231,11 @@ public class MainViewModel extends ViewModel {
                                             responseObject[0] = new JSONObject(result);
                                             responseObject[1] = new JSONObject(result2);
                                             responseObject[2] = new JSONObject(result3);
-                                            responseObject[3] = responseObject[0].put("type_detail","tvshowdetail");;
+                                            responseObject[3] = responseObject[0].put("type_detail","tvshowdetail");
 
-                                            System.out.println("Result"+responseObject[0]);
-                                            System.out.println("Result"+responseObject[1]);
-                                            System.out.println("Result"+responseObject[2]);
+                                            //System.out.println("Result"+responseObject[0]);
+                                            //System.out.println("Result"+responseObject[1]);
+                                            //System.out.println("Result"+responseObject[2]);
 
                                             DetailMovieItems detailMovieItems = new DetailMovieItems(responseObject);
                                             listItems.add(detailMovieItems);

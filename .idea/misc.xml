@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.favorite.FavoriteTvshowAdapter activity" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie adapterFavorite" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie EXTRA_FAVORITE" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie EXTRA_MOVIE_NAME" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie EXTRA_POSITION" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie EXTRA_TYPE_DETAIL" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie position" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie REQUEST_DELETE" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie RESULT_DELETE" />
+      <entry_point TYPE="field" FQNAME="com.ajoyajoya.movieliciousv2.DetailMovie RESULT_MOVING" />
+    </entry_points>
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.FavoriteMovieAdapter" method="addItem" />
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.FavoriteTvshowAdapter" method="addItem" />
+    <pattern value="com.ajoyajoya.movieliciousv2.DetailMovie" />
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.FavoriteMovieAdapter" />
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.FavoriteTvshowAdapter" />
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.FavoriteTvshowAdapter" method="getActivity" />
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.FavoriteMovieAdapter" method="getListFavoriteMovie" />
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.FavoriteTvshowAdapter" method="getListFavoriteTvshow" />
+    <pattern value="com.ajoyajoya.movieliciousv2.db.TvShowHelper" method="getSingleFavoriteTvShow" />
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.ui.main.PageViewModel" />
+    <pattern value="com.ajoyajoya.movieliciousv2.favorite.ui.main.PlaceholderFragment" />
+    <pattern value="com.ajoyajoya.movieliciousv2.MainActivity" />
+    <pattern value="com.ajoyajoya.movieliciousv2.MainActivity" method="onCreate" />
+    <pattern value="com.ajoyajoya.movieliciousv2.DetailMovie" method="setActionBarTitle" />
+    <pattern value="com.ajoyajoya.movieliciousv2.DetailMovie" method="showDetailMovie" />
+    <pattern value="com.ajoyajoya.movieliciousv2.DetailMovie" method="showDetailTv" />
+    <pattern value="com.ajoyajoya.movieliciousv2.db.TvShowHelper" />
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />

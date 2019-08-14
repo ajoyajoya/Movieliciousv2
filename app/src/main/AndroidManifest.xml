@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".favorite.FavoriteActivity"
+            android:label="@string/title_activity_favorite" />
+        <activity
             android:name=".PopupVideo"
             android:theme="@style/AppTheme.TrailerPopup" />
         <activity android:name=".DetailMovie" /> <!-- <activity android:name=".DetailMovie" /> -->

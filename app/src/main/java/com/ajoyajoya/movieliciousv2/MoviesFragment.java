@@ -3,7 +3,6 @@ package com.ajoyajoya.movieliciousv2;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -24,11 +23,6 @@ public class MoviesFragment extends Fragment {
 
     private MovieAdapter adapter;
     private ProgressBar progressBar;
-    private MainViewModel mainViewModel;
-
-    // --Commented out by Inspection (2019-07-01 22:07):private ListMovieAdapter adapter;
-    private RecyclerView rvCategory;
-    private final ArrayList<Movie> list = new ArrayList<>();
 
 
     public MoviesFragment() {
@@ -45,7 +39,7 @@ public class MoviesFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_movies, container, false);
 
 
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        MainViewModel mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mainViewModel.getMovies().observe(this, getMovies);
 
         adapter = new MovieAdapter(getContext());
@@ -58,29 +52,24 @@ public class MoviesFragment extends Fragment {
 
         progressBar.getIndeterminateDrawable().setColorFilter(0xFFFFFFFF,android.graphics.PorterDuff.Mode.MULTIPLY);
 
-        String movies = "";
-        mainViewModel.setMovies(movies);
+        mainViewModel.setMovies();
 
         return v;
     }
 
-    private Observer<ArrayList<MovieItems>> getMovies = new Observer<ArrayList<MovieItems>>() {
+    private final Observer<ArrayList<MovieItems>> getMovies = new Observer<ArrayList<MovieItems>>() {
         @Override
         public void onChanged(ArrayList<MovieItems> movieItems) {
             if (movieItems != null) {
                 adapter.setData(movieItems);
-                showLoading(false);
+                showLoading();
             }
         }
     };
 
 
-    private void showLoading(Boolean state) {
-        if (state) {
-            progressBar.setVisibility(View.VISIBLE);
-        } else {
-            progressBar.setVisibility(View.GONE);
-        }
+    private void showLoading() {
+        progressBar.setVisibility(View.GONE);
     }
 
 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_poster_favoritetv"
+        android:layout_width="fill_parent"
+        android:layout_height="210dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/shadow_poster"
+        android:scaleType="centerCrop"
+        android:src="@drawable/poster_a_star"
+        android:contentDescription="@string/image_poster_movie" />
+
+    <TextView
+        android:id="@+id/txt_favoritetv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/img_poster_favoritetv"
+        android:layout_alignBottom="@+id/img_poster_favoritetv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/overlaybackground"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="@string/movie_title" />
+
+    <Button
+        android:id="@+id/delete_favoritetv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@drawable/ic_delete_forever_black_24dp"
+        android:gravity="center"
+        android:padding="@dimen/padding_rate"
+        tools:ignore="RtlHardcoded"  />
+
+</RelativeLayout>

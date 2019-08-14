@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.ajoyajoya.movieliciousv2.favorite.FavoriteMovie;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
@@ -21,7 +21,7 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
 
     private final Context context;
 
-    private ArrayList<TvItems> mData1 = new ArrayList<>();
+    private final ArrayList<TvItems> mData1 = new ArrayList<>();
 
     public TvAdapter(Context context) {
         this.context = context;
@@ -42,17 +42,20 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TvAdapter.TvViewHolder tvViewHolder, final int position) {
+    public void onBindViewHolder(@NonNull final TvAdapter.TvViewHolder tvViewHolder, int position) {
         tvViewHolder.bind(mData1.get(position));
 
         tvViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(context, "Kamu Memilih "+  mData1.get(position).getTvId(), Toast.LENGTH_SHORT).show();
+                FavoriteMovie favoriteMovie = new FavoriteMovie();
+                favoriteMovie.setMovieid(mData1.get(tvViewHolder.getAdapterPosition()).getTvId());
+                favoriteMovie.setMoviename(mData1.get(tvViewHolder.getAdapterPosition()).getTvName());
+                favoriteMovie.setImageurl(mData1.get(tvViewHolder.getAdapterPosition()).getTvPoster());
+                favoriteMovie.setTypedetail("tvshowdetail");
                 Intent moveIntent = new Intent(context, DetailMovie.class);
-                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_ID, String.valueOf(mData1.get(position).getTvId()));
-                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_NAME, String.valueOf(mData1.get(position).getTvName()));
-                moveIntent.putExtra(DetailMovie.EXTRA_TYPE_DETAIL, "tvshowdetail");
+                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_ID, favoriteMovie);
                 context.startActivity(moveIntent);
             }
         });
@@ -70,14 +73,14 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
         final TextView txtTvRating;
         final ImageView imgTvPoster;
 
-        public TvViewHolder(@NonNull View itemView) {
+        TvViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTvName = itemView.findViewById(R.id.tv_item_title);
             txtTvRating = itemView.findViewById(R.id.txt_tv_rate);
             imgTvPoster = itemView.findViewById(R.id.img_item_thumbphoto);
         }
 
-        public void bind(TvItems tvItems) {
+        void bind(TvItems tvItems) {
 
             String yearsRelease = tvItems.getTvName()+ " ("+ tvItems.getTvReleaseDate().substring(0, 4)+")";
             txtTvName.setText(yearsRelease);
@@ -104,7 +107,7 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder> {
             }
 
             if (hasRated==0.0){
-                txtTvRating.setText("NR");
+                txtTvRating.setText(R.string.not_rated);
             }else{
                 txtTvRating.setText(String.valueOf(hasRated));
             }

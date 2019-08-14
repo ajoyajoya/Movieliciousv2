@@ -5,26 +5,23 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.ajoyajoya.movieliciousv2.favorite.FavoriteMovie;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder>  {
 
     private final Context context;
 
-    private ArrayList<MovieItems> mData = new ArrayList<>();
+    private final ArrayList<MovieItems> mData = new ArrayList<>();
 
     public MovieAdapter(Context context) {
         this.context = context;
@@ -44,7 +41,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieViewHolder movieViewHolder, final int position) {
+    public void onBindViewHolder(@NonNull final MovieViewHolder movieViewHolder, int position) {
         movieViewHolder.bind(mData.get(position));
 
         movieViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -52,10 +49,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             public void onClick(View v) {
                 //Toast.makeText(context, "Kamu Memilih "+  mData.get(position).getMovieId(), Toast.LENGTH_SHORT).show();
 
+                FavoriteMovie favoriteMovie = new FavoriteMovie();
+                favoriteMovie.setMovieid(mData.get(movieViewHolder.getAdapterPosition()).getMovieId());
+                favoriteMovie.setMoviename(mData.get(movieViewHolder.getAdapterPosition()).getMovieName());
+                favoriteMovie.setImageurl(mData.get(movieViewHolder.getAdapterPosition()).getMoviePoster());
+                favoriteMovie.setTypedetail("moviedetail");
                 Intent moveIntent = new Intent(context, DetailMovie.class);
-                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_ID, String.valueOf(mData.get(position).getMovieId()));
-                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_NAME, String.valueOf(mData.get(position).getMovieName()));
-                moveIntent.putExtra(DetailMovie.EXTRA_TYPE_DETAIL, "moviedetail");
+                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE_ID, favoriteMovie);
                 context.startActivity(moveIntent);
 
             }
@@ -78,7 +78,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         final TextView txtMovieCategory;
         final ImageView imgMoviePoster;
 
-        public MovieViewHolder(@NonNull View itemView){
+        MovieViewHolder(@NonNull View itemView){
             super(itemView);
             txtMovieName = itemView.findViewById(R.id.txt_movie_name);
             txtMovieRating = itemView.findViewById(R.id.txt_movie_rate);
@@ -87,7 +87,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             imgMoviePoster = itemView.findViewById(R.id.img_poster_movie);
         }
 
-        public void bind(MovieItems movieItems) {
+        void bind(MovieItems movieItems) {
 
             String release = context.getString(R.string.date_release);
 
@@ -121,7 +121,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             }
 
             if (hasRated==0.0){
-                txtMovieRating.setText("NR");
+                txtMovieRating.setText(R.string.not_rated);
             }else{
                 txtMovieRating.setText(String.valueOf(hasRated));
             }

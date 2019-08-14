@@ -3,26 +3,19 @@ package com.ajoyajoya.movieliciousv2;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.CustomViewTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 
 import java.util.ArrayList;
@@ -33,7 +26,7 @@ public class DetailMovieAdapter extends RecyclerView.Adapter<DetailMovieAdapter.
 
     private final Context context;
 
-    private ArrayList<DetailMovieItems> mData3 = new ArrayList<>();
+    private final ArrayList<DetailMovieItems> mData3 = new ArrayList<>();
 
     public DetailMovieAdapter(Context context) {
         this.context = context;
@@ -55,7 +48,7 @@ public class DetailMovieAdapter extends RecyclerView.Adapter<DetailMovieAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DetailMovieAdapter.DetailMovieViewHolder detailMovieViewHolder, final int position) {
+    public void onBindViewHolder(@NonNull final DetailMovieAdapter.DetailMovieViewHolder detailMovieViewHolder, int position) {
         detailMovieViewHolder.bind(mData3.get(position));
 
         detailMovieViewHolder.itemView.findViewById(R.id.btn_trailer_play).setOnClickListener(new View.OnClickListener() {
@@ -64,8 +57,8 @@ public class DetailMovieAdapter extends RecyclerView.Adapter<DetailMovieAdapter.
                 //Toast.makeText(context, "Kamu Memilih "+  mData.get(position).getMovieId(), Toast.LENGTH_SHORT).show();
 
                 Intent moveIntent = new Intent(context, PopupVideo.class);
-                moveIntent.putExtra(PopupVideo.EXTRA_VIDEO_ID, mData3.get(position).getVideoTrailer()).toString();
-                moveIntent.putExtra(PopupVideo.EXTRA_VIDEO_SOURCE, mData3.get(position).getVideoSource()).toString();
+                moveIntent.putExtra(PopupVideo.EXTRA_VIDEO_ID, String.valueOf(mData3.get(detailMovieViewHolder.getAdapterPosition()).getVideoTrailer()));
+                moveIntent.putExtra(PopupVideo.EXTRA_VIDEO_SOURCE, String.valueOf(mData3.get(detailMovieViewHolder.getAdapterPosition()).getVideoSource()));
                 context.startActivity(moveIntent);
 
             }
@@ -77,8 +70,8 @@ public class DetailMovieAdapter extends RecyclerView.Adapter<DetailMovieAdapter.
                 //Toast.makeText(context, "Kamu Memilih "+  mData.get(position).getMovieId(), Toast.LENGTH_SHORT).show();
 
                 Intent moveIntent = new Intent(context, PopupVideo.class);
-                moveIntent.putExtra(PopupVideo.EXTRA_VIDEO_ID, mData3.get(position).getVideoTrailer()).toString();
-                moveIntent.putExtra(PopupVideo.EXTRA_VIDEO_SOURCE, mData3.get(position).getVideoSource()).toString();
+                moveIntent.putExtra(PopupVideo.EXTRA_VIDEO_ID, String.valueOf(mData3.get(detailMovieViewHolder.getAdapterPosition()).getVideoTrailer()));
+                moveIntent.putExtra(PopupVideo.EXTRA_VIDEO_SOURCE, String.valueOf(mData3.get(detailMovieViewHolder.getAdapterPosition()).getVideoSource()));
                 context.startActivity(moveIntent);
 
             }
@@ -105,7 +98,7 @@ public class DetailMovieAdapter extends RecyclerView.Adapter<DetailMovieAdapter.
         final TextView tvMovieJob2;
 
 
-        public DetailMovieViewHolder(@NonNull View itemView) {
+        DetailMovieViewHolder(@NonNull View itemView) {
             super(itemView);
             tvMovieName = itemView.findViewById(R.id.txt_movie_name);
             tvMovieRate = itemView.findViewById(R.id.txt_movie_rate);
@@ -120,7 +113,7 @@ public class DetailMovieAdapter extends RecyclerView.Adapter<DetailMovieAdapter.
             tvMovieJob2 = itemView.findViewById(R.id.txt_movie_crew_job2);
         }
 
-        public void bind(DetailMovieItems detailMovieItems) {
+        void bind(DetailMovieItems detailMovieItems) {
 
             String yearsRelease = detailMovieItems.getMovieName()+ " ("+ detailMovieItems.getReleaseDate().substring(0, 4)+")";
             tvMovieName.setText(yearsRelease);
@@ -160,7 +153,7 @@ public class DetailMovieAdapter extends RecyclerView.Adapter<DetailMovieAdapter.
             }
 
             if (hasRated==0.0){
-                tvMovieRate.setText("NR");
+                tvMovieRate.setText(R.string.not_rated);
             }else{
                 tvMovieRate.setText(String.valueOf(hasRated));
             }

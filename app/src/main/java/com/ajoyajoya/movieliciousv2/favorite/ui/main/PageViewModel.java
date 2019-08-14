@@ -1,4 +1,4 @@
-package com.ajoyajoya.movieliciousv2.ui.main;
+package com.ajoyajoya.movieliciousv2.favorite.ui.main;
 
 import android.arch.core.util.Function;
 import android.arch.lifecycle.LiveData;
@@ -23,8 +23,4 @@ class PageViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
-
-
-
-
 }

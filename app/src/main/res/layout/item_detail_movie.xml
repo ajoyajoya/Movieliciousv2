@@ -19,7 +19,6 @@
             android:layout_height="wrap_content" />
 
         <include
-            android:id="@+id/desc_content_detail"
             layout="@layout/content_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

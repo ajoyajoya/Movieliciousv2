@@ -2,7 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <dimen name="activity_vertical_margin" tools:keep="@dimen/activity_vertical_margin">16dp</dimen>
-    <dimen name="activity_horizontal_margin" tools:keep="@dimen/activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin" tools:keep="@dimen/activity_horizontal_margin">16dp
+    </dimen>
     <dimen name="padding_rate">5dp</dimen>
 
 

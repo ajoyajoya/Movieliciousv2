@@ -14,111 +14,13 @@
     <string name="overview_title">Ikhtisar</string>
     <string name="this_is_poster">Ini gambar poster film</string>
     <string name="this_for_background_image">Ini latar gambar cuplikan film</string>
-    <string name="this_for_button">Ini tombol putar cuplikan</string>
     <string name="change_language_settings" tools:keep="@string/change_language_settings">Ganti Pengaturan Bahasa</string>
 
-    <string name="language_id">id-ID</string>
     <string name="date_release">Tanggal Rilis</string>
     <string name="failed_initialized">Gagal Menginisialisasi</string>
 
     <string name="video_notfound">Video Tidak Ditemukan</string>
 
-
-
-    <string-array name="data_movie_name">
-        <item>A Star is Born (2018)</item>
-        <item>Aquaman (2018)</item>
-        <item>Avengers: Infinity War (2018)</item>
-        <item>Bird Box 2018</item>
-        <item>Bohemian Rhapsody (2018)</item>
-        <item>Bumblebee (2018)</item>
-        <item>Creed II (2018)</item>
-        <item>Deadpool 2 (2018)</item>
-        <item>How to Train Your Dragon: The Hidden World (2019)</item>
-        <item>Dragon Ball Super: Broly (2018)</item>
-    </string-array>
-
-    <string-array name="data_movie_rating">
-        <item>7.8</item>
-        <item>7.1</item>
-        <item>8.5</item>
-        <item>6.6</item>
-        <item>8.0</item>
-        <item>6.9</item>
-        <item>7.2</item>
-        <item>7.8</item>
-        <item>7.6</item>
-        <item>8.0</item>
-    </string-array>
-
-    <string-array name="data_movie_category">
-        <item>R | 2h 16min | Drama, Musik, Romansa | 5 Oktober 2018 (Amerika)</item>
-        <item>PG-13 | 2h 23min | Aksi, Petualangan, Fantasi | 21 Desember 2018 (USA)</item>
-        <item>PG-13 | 2h 29min | Aksi, Petualangan, Sci-Fi | 27 April 2018 (USA)</item>
-        <item>R | 2h 4min | Drama, Horor, Sci-Fi | 21 Desember 2018 (USA)</item>
-        <item>PG-13 | 2h 14min | Biografi, Drama, Musik | 2 November 2018 (USA)</item>
-        <item>PG-13 | 1h 54min | Aksi, Petualangan, Sci-Fi | 21 Desember 2018 (USA)</item>
-        <item>PG-13 | 2h 10min | Drama, Olah Raga | 21 November 2018 (USA)</item>
-        <item>R | 1h 59min | Aksi, Petualangan, Komedi | 18 Mei 2018 (USA)</item>
-        <item>PG | 1h 44min | Animasi, Aksi, Petualangan | 22 Februari 2019 (USA)</item>
-        <item>PG | 1h 40min | Animasi, Aksi, Petualangan | 16 Januari 2019 (USA)</item>
-    </string-array>
-
-    <string-array name="data_movie_desc">
-        <item>
-            Seorang musisi membantu seorang penyanyi muda menemukan ketenaran karena usia dan alkoholisme membuat kariernya menurun. Musisi kawakan Jackson Maine (Bradley Cooper) menemukan-dan jatuh cinta dengan artis yang sedang berjuang Ally (Gaga).\n
-            Dia baru saja menyerah pada mimpinya untuk menjadi besar sebagai penyanyi - sampai Jack membujuknya menjadi sorotan. Tetapi bahkan ketika karier Ally lepas landas, sisi pribadi dari hubungan mereka hancur, ketika Jack berjuang terus-menerus dengan setan-setan internalnya sendiri.
-        </item>
-        <item>
-            Arthur Curry, pewaris kelahiran manusia dari kerajaan bawah laut Atlantis, melanjutkan upaya untuk mencegah perang antara dunia lautan dan daratan. Curry, setengah manusia dari Atlantis, melakukan perjalanan seumur hidup.\n
-            Petualangan ini tidak hanya memaksanya untuk berdamai dengan identitas aslinya, tetapi juga memaksanya untuk menemukan apakah dia sepenuhnya layak memenuhi takdirnya sendiri: menjadi seorang raja.
-        </item>
-        <item>
-            The Avengers dan sekutu mereka harus rela mengorbankan semua dalam upaya untuk mengalahkan Thanos yang kuat sebelum kehancuran dan kehancurannya mengakhiri alam semesta. Ketika para Avengers dan sekutu mereka terus melindungi dunia dari ancaman yang terlalu besar untuk ditangani oleh satu pahlawan, bahaya baru telah muncul dari bayang-bayang kosmik: Thanos.\n
-            Seorang lalim penghinaan intergalaksi, tujuannya adalah untuk mengumpulkan semua enam Batu Infinity, artefak kekuatan tak terbayangkan, dan menggunakannya untuk menimbulkan keinginannya yang terpelintir pada semua kenyataan. Segala sesuatu yang Avengers telah perjuangkan telah mengarah ke saat ini, nasib Bumi dan keberadaan tidak pernah lebih pasti.
-        </item>
-        <item>
-            Lima tahun setelah kehadiran tak terlihat yang tak menyenangkan membuat sebagian besar masyarakat bunuh diri, seorang ibu dan dua anaknya melakukan upaya putus asa untuk mencapai keselamatan.\n
-            Di tengah teror global yang tidak diketahui, seorang ibu harus menemukan kekuatan untuk melarikan diri bersama anak-anaknya menyusuri sungai yang berbahaya untuk mencari keselamatan. Karena kekuatan mematikan yang tak terlihat, perjalanan berbahaya harus dilakukan secara membabi buta. Disutradarai oleh pemenang Emmy Susanne Bier, Bird Box adalah film thriller yang dibintangi oleh pemenang Academy Award Sandra Bullock, John Malkovich, Sarah Paulson, dan Trevante Rhodes.
-        </item>
-        <item>
-            Kisah band rock legendaris Queen dan vokalis Freddie Mercury, mengarah ke penampilan terkenal mereka di Live Aid (1985). \ Bohemian Rhapsody adalah perayaan Queen yang menghentak kaki, musik mereka dan vokalis mereka yang luar biasa Freddie Mercury. Freddie menentang stereotip dan menghancurkan konvensi untuk menjadi salah satu penghibur paling dicintai di planet ini.\n
-            Film ini melacak kebangkitan band melalui lagu-lagu ikonik dan suara revolusioner mereka. Mereka mencapai kesuksesan yang tak tertandingi, tetapi pada gilirannya yang tak terduga Freddie, dikelilingi oleh pengaruh yang lebih gelap, menghindar Queen dalam mengejar karir solonya. Setelah sangat menderita tanpa kolaborasi Ratu, Freddie berhasil bersatu kembali dengan teman-teman bandnya tepat waktu untuk Live Aid. Sementara dengan berani menghadapi diagnosis AIDS baru-baru ini, Freddie memimpin band di salah satu pertunjukan terbesar dalam sejarah musik rock. Queen semen warisan yang terus menginspirasi orang luar, pemimpi dan pecinta musik hingga hari ini.
-        </item>
-        <item>
-            Dalam pelarian pada tahun 1987, Bumblebee menemukan tempat perlindungan di tempat barang rongsokan di kota pantai kecil California. Pada puncak usia 18 dan berusaha menemukan tempatnya di dunia, Charlie Watson menemukan Bumblebee, bekas luka pertempuran dan rusak. \n
-            Di Cybertron, Autobots, yang dipimpin oleh Optimus Prime, hampir kehilangan Perang Cybertronian Hebat kepada musuh-musuh mereka, Decepticons, dan mulai membuat persiapan untuk meninggalkan planet ini. Decepticons yang dipimpin oleh Shockwave, Soundwave dan Starscream menyergap mereka selama evakuasi, dan Optimus mengirimkan pengintai muda, B-127, ke Bumi untuk mendirikan basis operasi di mana Autobots dapat berkumpul kembali. B-127 mencapai Bumi sendirian pada tahun 1987, crash-landing di California dan mengganggu latihan pelatihan yang dilakukan oleh Sektor 7, sebuah agen rahasia pemerintah yang memantau aktivitas luar angkasa di Bumi. Agen sektor 7 Kolonel Jack Burns menganggap B-127 sebagai penyerang dan serangan yang bermusuhan, mendorong B-127 ke dalam hutan, di mana ia kemudian disergap oleh Decepticon Blitzwing. Ketika B-127 menolak untuk mengungkapkan keberadaan Optimus, Blitzwing dengan hati-hati mengeluarkan kotak suara dan merusak inti ingatannya. B-127 berhasil menghancurkan Blitzwing sebelum pingsan karena lukanya. Sebelum memasuki stasis
-        </item>
-        <item>
-            Di bawah asuhan Rocky Balboa, juara kelas berat yang baru dinobatkan Adonis Creed berhadapan melawan Viktor Drago, putra dari Ivan Drago. Tahun setelah Adonis Creed membuat nama untuk dirinya sendiri di bawah bimbingan Rocky Balboa, petinju muda itu menjadi Juara Kelas Berat Dunia. Sementara hidup baik dengan kemenangan itu dan pernikahannya dengan Bianca, masalah datang ke Philadelphia ketika Ivan Drago, petinju Rusia yang membunuh ayah Adonis, Apollo, datang bersama putranya, Viktor, untuk menantang Adonis.\n
-            Terhadap saran Rocky, Adonis menerima tantangan tanpa partisipasi mentornya dan membayar harga dalam pertarungan hukuman yang ia menangkan hanya dengan teknik. Sekarang terluka dan kehilangan semangat, Adonis tidak bisa membawa dirinya kembali ke permainan, meninggalkan semangat dan gelarnya dalam bahaya. Bersama-sama, keluarga Adonis dan Rocky harus menemukan cara untuk menghidupkan kembali semangat juang Adonis untuk menghadapi masa depan dalam pilihan apa pun yang ia buat. Sementara itu, keluarga Drago memiliki masalah sendiri mencoba mendapatkan kembali rasa hormat di tanah air mereka bahwa mereka kehilangan di tangan Rocky saat mereka bertanya-tanya apakah itu benar-benar layak.
-        </item>
-        <item>
-            Tentara bayaran mutan bermulut kotor Wade Wilson (AKA. Deadpool), menyatukan tim sesama penjahat mutan untuk melindungi anak laki-laki dengan kemampuan supranatural dari cyborg yang brutal, penjelajah waktu, Cable.\n
-            Setelah kehilangan Vanessa (Morena Baccarin), cinta dalam hidupnya, tentara bayaran melanggar dinding ke-4 Wade Wilson alias Deadpool (Ryan Reynolds) harus mengumpulkan tim dan melindungi mutan muda bernama Russell Collins alias Pemadam Kebakaran (Julian Dennison) dari Cable (Josh Brolin), cyborg yang tidak masuk akal, berbahaya dari masa depan, dan juga harus mempelajari pelajaran paling penting: menjadi bagian dari sebuah keluarga lagi.
-        </item>
-        <item>
-            Ketika Hiccup menemukan Toothless bukan satu-satunya Night Fury, ia harus mencari "Dunia Tersembunyi", Utopia Naga rahasia sebelum seorang tiran sewaan bernama Grimmel menemukannya terlebih dahulu. \n
-            HAs Hiccup memenuhi mimpinya untuk menciptakan utopia naga yang damai, penemuan ompong dari pasangan yang liar dan sulit ditangkap menarik Night Fury pergi. Ketika bahaya meningkat di rumah dan pemerintahan Hiccup sebagai kepala desa diuji, baik naga dan pengendara harus membuat keputusan yang mustahil untuk menyelamatkan jenis mereka.
-        </item>
-        <item>
-            Goku dan Vegeta bertemu Broly, seorang pejuang Saiyan tidak seperti petarung yang pernah mereka hadapi sebelumnya. \ Goku dan Vegeta bertemu Broly, seorang pejuang Saiyan yang tidak seperti petarung yang pernah mereka hadapi sebelumnya.\n
-            Mengetahui bahwa ada kekuatan yang semakin kuat di alam semesta yang belum dia temui, Goku menghabiskan seluruh waktunya untuk melatih kekuatan yang lebih besar. Tapi, suatu hari yang menentukan, Saiyan baru yang misterius muncul di hadapan Goku dan Vegeta: Broly. Bagaimana bisa seorang Saiyan menjadi anggota ras prajurit yang bangga yang sepenuhnya dimusnahkan setelah kehancuran Planet Vegeta muncul di Bumi? Dengan kembalinya Friezas dari neraka, pertempuran sengit menanti ketiga Saiyan perkasa yang telah mengikuti takdir yang sama sekali berbeda.
-        </item>
-    </string-array>
-
-    <string-array name="data_movie_poster">
-        <item>@drawable/poster_a_star</item>
-        <item>@drawable/poster_aquaman</item>
-        <item>@drawable/poster_avengerinfinity</item>
-        <item>@drawable/poster_birdbox</item>
-        <item>@drawable/poster_bohemian</item>
-        <item>@drawable/poster_bumblebee</item>
-        <item>@drawable/poster_creed</item>
-        <item>@drawable/poster_deadpool</item>
-        <item>@drawable/poster_dragon</item>
-        <item>@drawable/poster_dragonball</item>
-    </string-array>
 
     <string name="title_activity_main_tabbed">Movielicious</string>
     <string name="tab_text_1">FILM</string>
@@ -128,105 +30,27 @@
     <string name="hello_blank_fragment" tools:keep="@string/hello_blank_fragment">Hello blank fragment</string>
     <string name="image_poster_movie">Gambar Poster Film</string>
 
+    <string name="not_rated">NR</string>
 
-    <string-array name="data_tv_name">
-        <item>Arrow (2012)</item>
-        <item>Doom Patrol (2019)</item>
-        <item>Dragon Ball (1986)</item>
-        <item>Fairy Tail (2009)</item>
-        <item>Family Guy (1999)</item>
-        <item>The Flash (2014)</item>
-        <item>God (2016)</item>
-        <item>Gotham (2014)</item>
-        <item>Grey Anatomy (2005)</item>
-        <item>Hanna (2019)</item>
-    </string-array>
+    <string name="favorite">Favorit</string>
+    <string name="language">Bahasa</string>
 
-    <string-array name="data_tv_rating">
-        <item>7.6</item>
-        <item>8.2</item>
-        <item>8.5</item>
-        <item>8.1</item>
-        <item>8.2</item>
-        <item>7.8</item>
-        <item>7.5</item>
-        <item>7.9</item>
-        <item>7.6</item>
-        <item>7.6</item>
-    </string-array>
+    <string name="success_favorite">Berhasil Favorite</string>
+    <string name="failed_favorite">Gagal Favorite</string>
 
-    <string-array name="data_tv_category">
-        <item>TV-14 | 42min | Aksi, Petualangan, Kriminal | Seri TV (2012– )</item>
-        <item>TV-MA | 1h | Aksi, Petualangan, Komedi | Seri TV (2019– )</item>
-        <item>TV-Y7 | 24min | Animasi, Aksi, Petualangan | Seri TV(1986–1989)</item>
-        <item>TV-14 | 24min | Animasi, Aksi, Petualangan | Seri TV (2009– )</item>
-        <item>TV-14 | 22min | Animasi, Komedi | Seri TV (1999– )</item>
-        <item>TV-PG | 43min | Aksi, Petualangan, Drama | Seri TV (2014– )</item>
-        <item>TV-PG | 21min | Komedi | Episode aired 28 September 2016</item>
-        <item>TV-14 | 42min | Aksi, Kriminal, Drama | Seri TV (2014–2019)</item>
-        <item>TV-14 | 41min | Drama, Romansa | Seri TV (2005– )</item>
-        <item>TV-MA | 1h | Aksi, Drama | Seri TV (2019– )</item>
-    </string-array>
+    <string name="title_activity_favorite">Halaman Favorit</string>
 
-    <string-array name="data_tv_desc">
-        <item>
-            Playboy miliarder manja, Oliver Queen, hilang dan diduga tewas ketika kapal pesiarnya hilang di laut. Dia kembali lima tahun kemudian seorang pria yang berubah, bertekad untuk membersihkan kota sebagai main hakim sendiri bersenjatakan busur.\n
-             Oliver Queen dan ayahnya tersesat di laut ketika kapal pesiar mewah mereka tenggelam, rupanya dalam badai. Ayahnya meninggal, tetapi Oliver bertahan selama lima tahun di pulau yang belum dipetakan dan akhirnya kembali ke rumah. Tetapi dia tidak sendirian di pulau itu di mana dia belajar tidak hanya bagaimana melawan dan bertahan hidup tetapi juga dari ayahnya yang korup dan transaksi bisnis yang tidak bermoral. Ia kembali ke peradaban sebagai manusia yang telah berubah, bertekad untuk memperbaikinya. Dia menyamar dengan tudung salah satu mentor pulau misteriusnya, mempersenjatai dirinya sendiri dengan busur dan mulai memburu pria dan wanita yang telah merusak kotanya.
-        </item>
-        <item>
-            Petualangan seorang ilmuwan gila idealis dan tim lapangannya dari orang-orang buangan yang sangat kuat. \n
-            Membayangkan kembali salah satu kelompok Super Heroes DC yang paling dicintai DC: Robotman, Negative Man, Elasti-Girl dan Crazy Jane, dipimpin oleh ilmuwan gila modern Dr. Niles Caulder (Ketua). Anggota Patroli Doom masing-masing mengalami kecelakaan mengerikan yang memberi mereka kemampuan manusia super - tetapi juga membuat mereka terluka dan cacat. Trauma dan tertindas, tim menemukan tujuan melalui Ketua, yang menyatukan mereka untuk menyelidiki fenomena aneh yang ada - dan untuk melindungi Bumi dari apa yang mereka temukan. \n
-            Bagian dari kelompok pendukung, bagian dari tim Pahlawan Super, Patroli Doom adalah sekelompok orang aneh bertenaga super yang berjuang untuk dunia yang tidak ingin ada hubungannya dengan mereka. Mengambil setelah peristiwa Titans, Doom Patrol akan menemukan pahlawan enggan ini di tempat yang tidak pernah mereka duga, dipanggil untuk bertindak oleh Cyborg, yang datang kepada mereka dengan misi yang sulit ditolak, tetapi dengan peringatan yang sulit untuk diabaikan: hidup mereka tidak akan pernah sama.
-        </item>
-        <item>
-            Son Gokû, seorang pejuang dengan ekor monyet, melakukan pencarian dengan bermacam-macam karakter aneh untuk mencari Bola Naga, satu set kristal yang dapat memberikan pembawa apa pun yang mereka inginkan. \n
-             Apa yang dimulai dengan menceritakan kembali legenda Cina "Journey to the West" yang aneh dengan cepat berubah menjadi kegilaan murni. Pada versi Bumi yang diputar, Son Gokû, seorang pejuang anak yang sangat kuat bergabung dengan beberapa teman dalam pencarian tujuh "bola naga", yang, ketika berkumpul, akan memanggil Naga Besar, yang akan menganugerahkan si pembawa bola. satu keinginan. Masalahnya adalah, Grand Dragon hanya dapat dipanggil setahun sekali, dan penjahat bertarung dengan Goku dan teman-temannya terus-menerus karena memiliki Dragon Ball.
-        </item>
-        <item>
-           Lucy, calon Penyihir Surgawi, menjadi teman dan sekutu penyihir kuat Natsu, Gray, dan Erza, yang merupakan bagian dari guild penyihir terkenal, Fairy Tail. \n
-             Lucy, seorang gadis berusia 17 tahun, memulai perjalanan untuk menjadi penyihir yang lengkap dan bergabung dengan guild FAIRY TAIL yang terkuat dan paling terkenal di mana ia bertemu Natsu, Happy, Grey dan Erza, yang memperlakukannya lebih seperti keluarga daripada teman. Serial epik ini membawa kita melalui semua bahaya yang dihadapi oleh anggota peri ekor dan akhirnya diatasi melalui cinta dan persahabatan yang timbal balik.
-        </item>
-        <item>
-            Di kota Rhode Island yang aneh, keluarga yang tidak berfungsi berusaha keras untuk menghadapi kehidupan sehari-hari karena mereka dilemparkan dari satu skenario gila ke skenario lain. \n
-             Sakit, bengkok dan salah secara politis, serial animasi ini menampilkan petualangan keluarga Griffin. Akhirnya, Peter yang bodoh dan istrinya yang tinggal di rumah Lois tinggal di Quahog, R.I, dan memiliki tiga anak. Meg, anak tertua, adalah orang buangan sosial, dan remaja Chris canggung dan tidak tahu apa-apa tentang lawan jenis. Yang termuda, Stewie, adalah bayi jenius yang bertekad membunuh ibunya dan menghancurkan dunia. Anjing yang bisa bicara, Brian, membuat Stewie terkendali sambil menyeruput martini dan memilah-milah masalah hidupnya sendiri.
-        </item>
-        <item>
-            Setelah disambar petir, Barry Allen bangun dari komanya untuk menemukan dia diberi kekuatan kecepatan super, menjadi Flash, melawan kejahatan di Central City. \n
-             Barry Allen adalah ilmuwan forensik polisi Central City dengan kehidupan yang cukup bahagia, meskipun trauma masa kanak-kanak merah dan kuning misterius membunuh ibunya dan membingkai ayahnya. Semua itu berubah ketika kecelakaan akselerator partikel besar menyebabkan Barry disambar petir di labnya. Keluar dari koma sembilan bulan kemudian, Barry dan teman-teman barunya di laboratorium S.T.A.R menemukan bahwa ia sekarang memiliki kemampuan untuk bergerak dengan kecepatan manusia super. Lebih jauh, Barry mengetahui bahwa dia hanyalah satu dari banyak yang terpengaruh oleh peristiwa itu, yang kebanyakan menggunakan kekuatan mereka untuk kejahatan. Bertekad untuk membuat perbedaan, Barry mendedikasikan hidupnya untuk melawan ancaman seperti itu, seperti The Flash. Sementara dia mendapatkan sekutu yang tidak pernah dia duga, ada juga pasukan rahasia yang bertekad untuk membantu dan memanipulasi dirinya untuk agenda mereka sendiri.
-        </item>
-        <item>
-            Setelah disambar petir, Barry Allen bangun dari komanya untuk menemukan dia diberi kekuatan kecepatan super, menjadi Flash, melawan kejahatan di Central City. \n
-Ketika Dre menemukan Zoey mempertanyakan kepercayaannya pada Tuhan, ia mengalami krisis iman dan bersandar pada anggota keluarga dan rekan kerja untuk masukan mereka. Sementara itu, Busur saudara Johan datang untuk tinggal bersama The Johnsons setelah tinggal di luar negeri dan menjadi duri instan di sisi Dres.
-        </item>
-        <item>
-            Kisah di balik Detektif James Gordons menjadi terkenal di Gotham City pada tahun-tahun sebelum kedatangan Batman\n
-             Di kota Gotham yang penuh kejahatan, Thomas dan Martha Wayne dibunuh di depan mata muda Bruce Waynes. Meskipun detektif Departemen Kepolisian Kota Gotham, James Gordon, dan mitra sinisnya, Harvey Bullock, tampaknya cepat-cepat menyelesaikan kasus ini, semuanya tidak begitu sederhana. Terinspirasi oleh Bruces trauma keinginan untuk keadilan, Gordon bersumpah untuk menemukannya di tengah korupsi Gothams. Dengan demikian dimulailah pencarian kesepian Gordon yang akan membuatnya melawan kawan-kawannya sendiri dan dunia bawah dengan persaingan dan misteri mereka yang mematikan.\n
-             Dalam perang yang akan datang, kepolosan akan hilang dan kompromi akan dilakukan karena beberapa penjahat akan jatuh sebagai korban sementara yang lain akan naik sebagai penjahat super. Sementara itu, Bruce muda mengamati perang ini dengan obsesi yang berkembang yang suatu hari akan mendorongnya untuk mencari keadilan sendiri terhadap kejahatan Gotham sebagai The Batman.
+    <string name="dialog_title">Hapus dari Favorit</string>
+    <string name="dialog_message">Apakah anda yakin ingin menghapus ini dari favorit?</string>
+    <string name="yes_remove">Ya</string>
+    <string name="no_remove">Tidak</string>
 
-        </item>
-        <item>
-            Drama yang berpusat pada kehidupan pribadi dan profesional dari lima magang bedah dan penyelia mereka. \n
-             Drama berbasis medis berpusat di sekitar Meredith Grey, seorang ahli bedah yang bercita-cita tinggi dan putri dari salah satu ahli bedah terbaik, Dr. Ellis Gray. Sepanjang seri, Meredith melewati tantangan profesional dan pribadi bersama dengan sesama ahli bedah di Rumah Sakit Seattle Grace.
-        </item>
-        <item>
-            Di bagian yang sama, film thriller konsep tinggi dan drama usia dewasa, HANNA mengikuti perjalanan seorang gadis muda luar biasa yang dibesarkan di hutan, ketika ia menghindari pengejaran tanpa henti dari agen CIA yang tidak ada buku dan mencoba untuk menggali kebenaran di balik siapa yang dia. \n
-             Di bagian yang sama, film thriller konsep tinggi dan drama usia dewasa, HANNA mengikuti perjalanan seorang gadis muda luar biasa yang dibesarkan di hutan, ketika ia menghindari pengejaran tanpa henti dari agen CIA yang tidak ada buku dan mencoba untuk menggali kebenaran di balik siapa yang dia adalah.
-        </item>
 
-    </string-array>
-
-    <string-array name="data_tv_poster">
-        <item>@drawable/tv_poster_arrow</item>
-        <item>@drawable/tv_poster_doom_patrol</item>
-        <item>@drawable/tv_poster_dragon_ball</item>
-        <item>@drawable/tv_poster_fairytail</item>
-        <item>@drawable/tv_poster_family_guy</item>
-        <item>@drawable/tv_poster_flash</item>
-        <item>@drawable/tv_poster_god</item>
-        <item>@drawable/tv_poster_gotham</item>
-        <item>@drawable/tv_poster_grey_anatomy</item>
-        <item>@drawable/tv_poster_hanna</item>
-    </string-array>
+    <string name="success_unfavorite">Sukses Menghapus Favorit</string>
+    <string name="failed_unfavorite">Gagal Menghapus Favorit</string>
+    <string name="refreshed">Berhasil di Refresh</string>
+    <string name="favorite_movie_tv_show">Favorit Film/Acara TV</string>
+    <string name="refresh_favorite_movie_tv_show">Refresh Favorit Film/Acara TV</string>
 
 
 </resources>
