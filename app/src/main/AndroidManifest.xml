@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ajoyajoya.movieliciousv2">
 
+    <permission android:name="com.ajoyajoya.movieliciousv2.READ_DATABASE" android:protectionLevel="normal" />
+    <permission android:name="com.ajoyajoya.movieliciousv2.WRITE_DATABASE" android:protectionLevel="normal" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +17,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".settings.SettingsActivity" />
+
+        <receiver android:name=".widgetmovie.WidgetTvshowFavorite">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_tvshow_favorite_info" />
+        </receiver>
+        <receiver android:name=".widgetmovie.WidgetMovieFavorite">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_movie_favorite_info" />
+        </receiver>
+
+        <activity android:name=".search.SearchMovies" />
         <activity
             android:name=".favorite.FavoriteActivity"
             android:label="@string/title_activity_favorite" />
@@ -52,6 +79,32 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".widgetmovie.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service
+            android:name=".widgetmovie.StackWidgetTvService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <receiver
+            android:name=".settings.DailyNotif"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver android:name=".settings.GetReleaseMovie"
+            android:enabled="true"
+            android:exported="true" />
+        <provider
+            android:authorities="com.ajoyajoya.movieliciousv2"
+            android:name=".provider.MovieProvider"
+            android:exported="true"
+            android:readPermission="com.ajoyajoya.movieliciousv2.READ_DATABASE"
+            android:writePermission="com.ajoyajoya.movieliciousv2.WRITE_DATABASE" />
+        <provider
+            android:authorities="com.ajoyajoya.movieliciousv2"
+            android:name=".provider.TvShowProvider"
+            android:exported="true"
+            android:readPermission="com.ajoyajoya.movieliciousv2.READ_DATABASE"
+            android:writePermission="com.ajoyajoya.movieliciousv2.WRITE_DATABASE" />
     </application>
 
 </manifest>

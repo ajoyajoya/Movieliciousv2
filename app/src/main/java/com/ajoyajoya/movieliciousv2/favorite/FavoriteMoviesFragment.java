@@ -25,10 +25,9 @@ import java.util.Objects;
  */
 public class FavoriteMoviesFragment extends Fragment implements LoadFavoriteCallback {
 
-
     private ProgressBar progressBar;
     private FavoriteMovieAdapter adapter;
-    private MovieHelper favoriteHelper;
+    private static MovieHelper favoriteHelper;
 
     public FavoriteMoviesFragment() {
         // Required empty public constructor
@@ -66,7 +65,7 @@ public class FavoriteMoviesFragment extends Fragment implements LoadFavoriteCall
 
         recyclerView.setAdapter(adapter);
 
-        new LoadFavoriteAsync(favoriteHelper, this).execute();
+        new FavoriteMoviesFragment.LoadFavoriteAsync(favoriteHelper, this).execute();
 
         return v;
 
@@ -142,6 +141,18 @@ public class FavoriteMoviesFragment extends Fragment implements LoadFavoriteCall
         progressBar.setVisibility(View.GONE);
     }
 
+//    public static class DataObserver extends ContentObserver {
+//        final Context context;
+//        public DataObserver(Handler handler, Context context) {
+//            super(handler);
+//            this.context = context;
+//        }
+//        @Override
+//        public void onChange(boolean selfChange) {
+//            super.onChange(selfChange);
+//            new LoadFavoriteAsync(favoriteHelper, (LoadFavoriteCallback) context).execute();
+//        }
+//    }
 
 
 }

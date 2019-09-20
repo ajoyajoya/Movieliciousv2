@@ -5,6 +5,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.util.Log;
 
+import com.ajoyajoya.movieliciousv2.search.SearchItems;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -28,6 +29,10 @@ public class MainViewModel extends ViewModel {
     private final MutableLiveData<ArrayList<DetailMovieItems>> listDetailMovies = new MutableLiveData<>();
 
     private final MutableLiveData<ArrayList<DetailMovieItems>> listDetailTvies = new MutableLiveData<>();
+
+    private final MutableLiveData<ArrayList<SearchItems>> listsSearchItems = new MutableLiveData<>();
+
+    private final MutableLiveData<ArrayList<String>> listTotalResult = new MutableLiveData<>();
 
     private String languageID = "";
 
@@ -87,6 +92,7 @@ public class MainViewModel extends ViewModel {
                     String result = new String(responseBody);
                     JSONObject responseObject = new JSONObject(result);
                     JSONArray list = responseObject.getJSONArray("results");
+
                     for (int i = 0; i < list.length(); i++) {
                         JSONObject tvies = list.getJSONObject(i);
                         TvItems tvItems = new TvItems(tvies);
@@ -107,6 +113,7 @@ public class MainViewModel extends ViewModel {
     void setDetailMovies(final String movies_id) {
         final AsyncHttpClient client = new AsyncHttpClient();
         final ArrayList<DetailMovieItems> listItems = new ArrayList<>();
+        final ArrayList<SearchItems> totalItems = new ArrayList<>();
 
         if (Locale.getDefault().getLanguage().equals("in")){
             languageID = "id-ID";
@@ -282,6 +289,140 @@ public class MainViewModel extends ViewModel {
     }
 
 
+    public void setSearch(final String searchQuery, final String searchCategory) {
+        AsyncHttpClient client = new AsyncHttpClient();
+        final ArrayList<SearchItems> listSearchItems = new ArrayList<>();
+
+        if (Locale.getDefault().getLanguage().equals("in")){
+            languageID = "id-ID";
+        } else {
+            languageID = "en-US";
+        }
+
+        String url = "https://api.themoviedb.org/3/search/movie?api_key="+API_KEY+"&language="+languageID+"&query="+searchQuery+"&page=1&include_adult=false";
+        String url2 = "https://api.themoviedb.org/3/search/tv?api_key="+API_KEY+"&language="+languageID+"&query="+searchQuery+"&page=1&include_adult=false";
+
+        switch (searchCategory){
+            case "movie":
+                client.get(url, new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        try {
+                            String result = new String(responseBody);
+                            JSONObject responseObject = new JSONObject(result);
+                            JSONArray list = responseObject.getJSONArray("results");
+                            String totalResult = String.valueOf(responseObject.getString("total_results"));
+                            System.out.println("Hasil Result" + totalResult);
+
+                            for (int i = 0; i < list.length(); i++) {
+                                JSONObject movie = list.getJSONObject(i);
+                                SearchItems searchItems = new SearchItems(movie, searchCategory);
+                                listSearchItems.add(searchItems);
+                            }
+                            listsSearchItems.postValue(listSearchItems);
+                        } catch (Exception e) {
+                            Log.d("Exception", e.getMessage());
+                        }
+                    }
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                        Log.d("onFailure", error.getMessage());
+                    }
+                });
+
+                break;
+
+            case "tvshow":
+                client.get(url2, new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        try {
+                            String result = new String(responseBody);
+                            JSONObject responseObject = new JSONObject(result);
+                            JSONArray list = responseObject.getJSONArray("results");
+                            String totalResult = String.valueOf(responseObject.getString("total_results"));
+                            System.out.println("Hasil Result" + totalResult);
+                            for (int i = 0; i < list.length(); i++) {
+                                JSONObject movie = list.getJSONObject(i);
+                                SearchItems searchItems = new SearchItems(movie, searchCategory);
+                                listSearchItems.add(searchItems);
+                            }
+                            listsSearchItems.postValue(listSearchItems);
+                        } catch (Exception e) {
+                            Log.d("Exception", e.getMessage());
+                        }
+                    }
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                        Log.d("onFailure", error.getMessage());
+                    }
+                });
+                break;
+        }
+
+
+    }
+
+    public void setTotalSearchResult(final String searchQuery) {
+        final AsyncHttpClient client = new AsyncHttpClient();
+        final ArrayList<SearchItems> listSearchItems = new ArrayList<>();
+
+        if (Locale.getDefault().getLanguage().equals("in")){
+            languageID = "id-ID";
+        } else {
+            languageID = "en-US";
+        }
+
+        String url = "https://api.themoviedb.org/3/search/movie?api_key="+API_KEY+"&language="+languageID+"&query="+searchQuery+"&page=1&include_adult=false";
+        final String url2 = "https://api.themoviedb.org/3/search/tv?api_key="+API_KEY+"&language="+languageID+"&query="+searchQuery+"&page=1&include_adult=false";
+
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    String result = new String(responseBody);
+                    JSONObject responseObject = new JSONObject(result);
+                    final String totalResult = String.valueOf(responseObject.getString("total_results"));
+                    //System.out.println("Hasil Result" + totalResult);
+
+                    client.get(url2, new AsyncHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody2) {
+                            try {
+                                String result2 = new String(responseBody2);
+                                JSONObject responseObject2 = new JSONObject(result2);
+                                String totalResult2 = String.valueOf(responseObject2.getString("total_results"));
+                                //System.out.println("Hasil Result" + totalResult2);
+
+                                ArrayList<String> mylist = new ArrayList<String>();
+                                mylist.add(totalResult);
+                                mylist.add(totalResult2);
+
+                                listTotalResult.postValue(mylist);
+                            } catch (Exception e) {
+                                Log.d("Exception", e.getMessage());
+                            }
+                        }
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                            Log.d("onFailure", error.getMessage());
+                        }
+                    });
+
+                } catch (Exception e) {
+                    Log.d("Exception", e.getMessage());
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("onFailure", error.getMessage());
+            }
+        });
+
+
+    }
+
+
 
     LiveData<ArrayList<MovieItems>> getMovies() {
         return listMovies;
@@ -294,6 +435,13 @@ public class MainViewModel extends ViewModel {
     }
     LiveData<ArrayList<DetailMovieItems>> getDetailTvies() {
         return listDetailTvies;
+    }
+    public LiveData<ArrayList<SearchItems>> getSearchItems() {
+        return listsSearchItems;
+    }
+
+    public LiveData<ArrayList<String>> getTotalSearchResult(){
+        return listTotalResult;
     }
 
 }

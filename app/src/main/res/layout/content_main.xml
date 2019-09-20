@@ -10,16 +10,46 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="186dp"
+        android:layout_marginBottom="256dp"
         android:layout_marginEnd="88dp"
         android:background="#212121"
         android:padding="8dp"
-        android:text="@string/language"
+        android:text="@string/setting_text"
         android:textColor="#ffffff"
         android:visibility="invisible" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="246dp"
+        android:layout_marginEnd="24dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:elevation="16dp"
+        android:focusable="true"
+        android:visibility="invisible"
+        app:pressedTranslationZ="12dp"
+        app:srcCompat="@drawable/ic_settings_white_24dp" />
+
+    <TextView
+        android:id="@+id/textview_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="186dp"
+        android:layout_marginEnd="88dp"
+        android:background="#212121"
+        android:padding="8dp"
+        android:text="@string/search_page"
+        android:textColor="#ffffff"
+        android:visibility="invisible" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -32,7 +62,7 @@
         android:focusable="true"
         android:visibility="invisible"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_language_24dp" />
+        app:srcCompat="@drawable/ic_search_white_24dp" />
 
     <TextView
         android:id="@+id/textview_favorite"
@@ -79,6 +109,6 @@
         android:focusable="true"
         android:visibility="visible"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_menu_white_24dp" />
+        app:srcCompat="@drawable/ic_menu_white_24dp"/>
 
 </RelativeLayout>

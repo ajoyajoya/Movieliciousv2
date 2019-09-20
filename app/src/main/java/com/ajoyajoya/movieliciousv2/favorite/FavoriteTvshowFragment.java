@@ -1,8 +1,11 @@
 package com.ajoyajoya.movieliciousv2.favorite;
 
 
+import android.content.Context;
+import android.database.ContentObserver;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -27,7 +30,7 @@ public class FavoriteTvshowFragment extends Fragment implements LoadFavoriteCall
 
     private ProgressBar progressBar;
     private FavoriteTvshowAdapter adapter;
-    private TvShowHelper favoriteHelper;
+    private static TvShowHelper favoriteHelper;
 
     public FavoriteTvshowFragment() {
         // Required empty public constructor
@@ -38,7 +41,6 @@ public class FavoriteTvshowFragment extends Fragment implements LoadFavoriteCall
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
 
         ((FavoriteActivity) Objects.requireNonNull(getActivity())).setFragmentRefreshListener(new FavoriteActivity.FragmentRefreshListener() {
             @Override
@@ -136,5 +138,18 @@ public class FavoriteTvshowFragment extends Fragment implements LoadFavoriteCall
 
     private void showLoading() {
         progressBar.setVisibility(View.GONE);
+    }
+
+    public static class DataObserver extends ContentObserver {
+        final Context context;
+        public DataObserver(Handler handler, Context context) {
+            super(handler);
+            this.context = context;
+        }
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            new LoadFavoriteAsync(favoriteHelper, (LoadFavoriteCallback) context).execute();
+        }
     }
 }

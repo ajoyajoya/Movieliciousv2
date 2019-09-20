@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -217,6 +218,14 @@ public class DetailMovie extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
 
+            if(isTaskRoot()){
+                startActivity(new Intent(DetailMovie.this,MainActivity.class));
+                // using finish() is optional, use it if you do not want to keep currentActivity in stack
+                finish();
+            }else{
+                super.onBackPressed();
+            }
+
             finish(); // close this activity and return to preview activity (if there is any)
         }
 
@@ -359,6 +368,18 @@ public class DetailMovie extends AppCompatActivity{
         return dateFormat.format(date);
     }
 
+    @Override
+    public void onBackPressed() {
+
+        if(isTaskRoot()){
+            startActivity(new Intent(DetailMovie.this,MainActivity.class));
+            // using finish() is optional, use it if you do not want to keep currentActivity in stack
+            finish();
+        }else{
+            super.onBackPressed();
+        }
+
+    }
 
 
 }

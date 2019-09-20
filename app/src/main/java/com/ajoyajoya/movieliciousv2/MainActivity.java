@@ -2,7 +2,6 @@ package com.ajoyajoya.movieliciousv2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -13,15 +12,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.ajoyajoya.movieliciousv2.favorite.FavoriteActivity;
+import com.ajoyajoya.movieliciousv2.search.SearchMovies;
+import com.ajoyajoya.movieliciousv2.settings.SettingsActivity;
 import com.ajoyajoya.movieliciousv2.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FloatingActionButton fab_main, fab1_favorite, fab2_language;
+    private FloatingActionButton fab_main, fab1_favorite, fab2_language, fab3_search;
     private Animation fab_open;
     private Animation fab_close;
     private TextView textview_favorite;
     private TextView textview_language;
+    private TextView textview_search;
 
     private Boolean isOpen = false;
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         fab_main = findViewById(R.id.fab);
         fab1_favorite = findViewById(R.id.fab1);
         fab2_language = findViewById(R.id.fab2);
+        fab3_search = findViewById(R.id.fab3);
         fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
         fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
         Animation fab_clock = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_rotate_clock);
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         textview_favorite = findViewById(R.id.textview_favorite);
         textview_language = findViewById(R.id.textview_language);
+        textview_search = findViewById(R.id.textview_search);
 
         fab_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
                     textview_favorite.setVisibility(View.INVISIBLE);
                     textview_language.setVisibility(View.INVISIBLE);
+                    textview_search.setVisibility(View.INVISIBLE);
+                    fab3_search.startAnimation(fab_close);
                     fab2_language.startAnimation(fab_close);
                     fab1_favorite.startAnimation(fab_close);
+                    fab3_search.setClickable(false);
                     fab2_language.setClickable(false);
                     fab1_favorite.setClickable(false);
                     isOpen = false;
@@ -64,8 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     textview_favorite.setVisibility(View.VISIBLE);
                     textview_language.setVisibility(View.VISIBLE);
+                    textview_search.setVisibility(View.VISIBLE);
+                    fab3_search.startAnimation(fab_open);
                     fab2_language.startAnimation(fab_open);
                     fab1_favorite.startAnimation(fab_open);
+                    fab3_search.setClickable(true);
                     fab2_language.setClickable(true);
                     fab1_favorite.setClickable(true);
                     isOpen = true;
@@ -75,17 +85,40 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        fab3_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent moveIntent = new Intent(MainActivity.this, SearchMovies.class);
+                startActivity(moveIntent);
+                textview_favorite.setVisibility(View.INVISIBLE);
+                textview_language.setVisibility(View.INVISIBLE);
+                textview_search.setVisibility(View.INVISIBLE);
+                fab3_search.startAnimation(fab_close);
+                fab2_language.startAnimation(fab_close);
+                fab1_favorite.startAnimation(fab_close);
+                fab3_search.setClickable(false);
+                fab2_language.setClickable(false);
+                fab1_favorite.setClickable(false);
+                isOpen = false;
+                fab_main.setImageResource(R.drawable.ic_menu_white_24dp);
+
+            }
+        });
 
         fab2_language.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                Intent mIntent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(mIntent);
                 textview_favorite.setVisibility(View.INVISIBLE);
                 textview_language.setVisibility(View.INVISIBLE);
+                textview_search.setVisibility(View.INVISIBLE);
+                fab3_search.startAnimation(fab_close);
                 fab2_language.startAnimation(fab_close);
                 fab1_favorite.startAnimation(fab_close);
+                fab3_search.setClickable(false);
                 fab2_language.setClickable(false);
                 fab1_favorite.setClickable(false);
                 isOpen = false;
@@ -103,8 +136,11 @@ public class MainActivity extends AppCompatActivity {
 
                 textview_favorite.setVisibility(View.INVISIBLE);
                 textview_language.setVisibility(View.INVISIBLE);
+                textview_search.setVisibility(View.INVISIBLE);
+                fab3_search.startAnimation(fab_close);
                 fab2_language.startAnimation(fab_close);
                 fab1_favorite.startAnimation(fab_close);
+                fab3_search.setClickable(false);
                 fab2_language.setClickable(false);
                 fab1_favorite.setClickable(false);
                 isOpen = false;

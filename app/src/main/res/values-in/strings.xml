@@ -33,7 +33,6 @@
     <string name="not_rated">NR</string>
 
     <string name="favorite">Favorit</string>
-    <string name="language">Bahasa</string>
 
     <string name="success_favorite">Berhasil Favorite</string>
     <string name="failed_favorite">Gagal Favorite</string>
@@ -52,5 +51,67 @@
     <string name="favorite_movie_tv_show">Favorit Film/Acara TV</string>
     <string name="refresh_favorite_movie_tv_show">Refresh Favorit Film/Acara TV</string>
 
+    <string name="search_page">Pencarian</string>
+    <string name="search_hint">Avengers, Spiderman, etc</string>
+    <string name="search_notfound">Pencarian Tidak Ditemukan</string>
+
+    <string name="moviewidget_text">Movielicious Favorit Film</string>
+    <string name="emptyfavorite_text">Favorit Kosong</string>
+    <string name="empty_tvfavorite_text">TV Show Favorit Kosobg</string>
+
+    <string name="tvwidget_text">Movielicious Favorit Acara TV</string>
+
+    <string name="setting_text">Pengaturan</string>
+
+    <string name="settings_name">Pengaturan Bahasa</string>
+    <string name="settings_detail">Cara mudah untuk mengubah bahasa lokal untuk perangkat android Anda. Program memprogram banyak bahasa dan lokal, sehingga Anda dapat dengan mudah menggunakannya.</string>
+
+    <string name="settings_daily">Pengingat Harian</string>
+    <string name="settings_daily_detail">Pengingat untuk kembali ke aplikasi</string>
+
+    <string name="settings_release">Pengingat Rilis Film Baru</string>
+    <string name="settings_release_detail">Pengingat untuk menampilkan film yang rilis hari ini</string>
+
+    <string-array name="id_settings">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="name_settings">
+        <item>Pengaturan Bahasa</item>
+        <item>Pengingat Harian</item>
+        <item>Pengingat Rilis Film Baru</item>
+    </string-array>
+
+    <string-array name="detail_settings">
+        <item>Cara mudah untuk mengubah bahasa lokal untuk perangkat android Anda.</item>
+        <item>Pengingat untuk kembali ke aplikasi</item>
+        <item>Pengingat untuk menampilkan film yang rilis hari ini</item>
+    </string-array>
+
+    <string-array name="icon_settings">
+        <item>@drawable/ic_language_24dp</item>
+        <item>@drawable/ic_notifications_none_white_24dp</item>
+        <item>@drawable/ic_movie_filter_white_24dp</item>
+    </string-array>
+
+    <string-array name="switch_settings">
+        <item>GONE</item>
+        <item>VISIBLE</item>
+        <item>VISIBLE</item>
+    </string-array>
+
+    <string name="notif_message">Cek Film dan Acara TV Favorit Anda setiap harinya.</string>
+    <string name="success_daily_notif">Berhasil mengaktifkan notifikasi harian.</string>
+
+    <string name="success_turnoff_notif">Berhasil menonaktifkan notifikasi harian.</string>
+
+    <string name="title_daily">Pengingat Harian</string>
+
+    <string name="release_today">Film Baru Rilis</string>
+
+    <string name="success_releaseon_notif">Berhasil mengaktifkan notifikasi Film baru rilis.</string>
+    <string name="success_releaseoff_notif">Berhasil menonaktifkan notifikasi Film baru rilis.</string>
 
 </resources>

@@ -120,4 +120,32 @@ public class TvShowHelper {
         }
     }
 
+    public Cursor queryByIdProvider(String id) {
+        return database.query(DATABASE_TABLE, null
+                , IDTV + " = ?"
+                , new String[]{id}
+                , null
+                , null
+                , null
+                , null);
+    }
+
+    public Cursor queryProvider() {
+        return database.query(DATABASE_TABLE
+                , null
+                , null
+                , null
+                , null
+                , null
+                , _ID + " ASC");
+    }
+
+    public long insertProvider(ContentValues values) {
+        return database.insert(DATABASE_TABLE, null, values);
+    }
+
+    public int deleteProvider(String id) {
+        return database.delete(DATABASE_TABLE, IDTV + " = ?", new String[]{id});
+    }
+
 }

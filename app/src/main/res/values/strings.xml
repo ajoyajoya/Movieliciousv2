@@ -32,7 +32,6 @@
     <string name="not_rated">NR</string>
 
     <string name="favorite">Favorite</string>
-    <string name="language">Language</string>
 
     <string name="success_favorite">Success Favorite</string>
     <string name="failed_favorite">Failed Favorite</string>
@@ -48,6 +47,70 @@
     <string name="refreshed">Refreshed</string>
     <string name="favorite_movie_tv_show">Favorite Movie/TV Show</string>
     <string name="refresh_favorite_movie_tv_show">Refresh Favorite Movie/TV Show</string>
+
+    <string name="search_page">Search</string>
+    <string name="search_hint">Avengers, Spiderman, etc</string>
+    <string name="search_notfound">Search Not Found</string>
+
+    <string name="moviewidget_text">Movielicious Favorite Movie</string>
+    <string name="emptyfavorite_text">Empty Favorite</string>
+
+    <string name="empty_tvfavorite_text">Empty Favorite Tv Show</string>
+
+    <string name="tvwidget_text">Movielicious Favorite Tv Show</string>
+
+    <string name="setting_text">Settings</string>
+    <string name="settings_name">Language Settings</string>
+    <string name="settings_detail">Easy way to change locale language for your android devices. Program preset many locales and languages, so you can easily use.</string>
+
+    <string name="settings_daily">Daily Reminder</string>
+    <string name="settings_daily_detail">Reminder for return to app</string>
+
+    <string name="settings_release">Release Reminder</string>
+    <string name="settings_release_detail">Reminder showing the movie that release today</string>
+
+    <string-array name="id_settings">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="name_settings">
+        <item>Language Settings</item>
+        <item>Daily Reminder</item>
+        <item>Release Reminder</item>
+    </string-array>
+
+    <string-array name="detail_settings">
+        <item>Easy way to change locale language for your android devices.</item>
+        <item>Reminder for return to app</item>
+        <item>Reminder showing the movie that release today</item>
+    </string-array>
+
+    <string-array name="icon_settings">
+        <item>@drawable/ic_language_24dp</item>
+        <item>@drawable/ic_notifications_none_white_24dp</item>
+        <item>@drawable/ic_movie_filter_white_24dp</item>
+    </string-array>
+
+    <string-array name="switch_settings">
+        <item>GONE</item>
+        <item>VISIBLE</item>
+        <item>VISIBLE</item>
+    </string-array>
+
+    <string name="notif_message">Checkout our daily update Movie and TV Show.</string>
+    <string name="success_daily_notif">Success turn on daily notification.</string>
+    <string name="success_turnoff_notif">Success turn off daily notification.</string>
+
+    <string name="title_daily">Daily Reminder</string>
+
+    <string name="release_today">New Release Today</string>
+
+
+    <string name="success_releaseon_notif">Success turn on new release movie.</string>
+    <string name="success_releaseoff_notif">Success turn off new release movie.</string>
+
 
 
 </resources>

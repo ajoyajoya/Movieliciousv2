@@ -123,6 +123,35 @@ public class MovieHelper {
         }
     }
 
+    public Cursor queryByIdProvider(String id) {
+        return database.query(DATABASE_TABLE, null
+                , IDMOVIE + " = ?"
+                , new String[]{id}
+                , null
+                , null
+                , null
+                , null);
+    }
+
+    public Cursor queryProvider() {
+        return database.query(DATABASE_TABLE
+                , null
+                , null
+                , null
+                , null
+                , null
+                , _ID + " DESC");
+    }
+
+    public long insertProvider(ContentValues values) {
+        return database.insert(DATABASE_TABLE, null, values);
+    }
+
+    public int deleteProvider(String id) {
+        System.out.println(id);
+        return database.delete(DATABASE_TABLE,IDMOVIE + " = ?", new String[]{id});
+    }
+
 
 
 }
